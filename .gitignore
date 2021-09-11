@@ -1,9 +1,8 @@
 color/
-Frames/
+Frames_*/
 inc/
 orange/
 entry.ogg
 *.mp4
 *.png
-/inc_m20/
-/inc_msl/
+/inc_*/
