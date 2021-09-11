@@ -3,7 +3,7 @@ Entry, Descent, and Landing simulations
 
 #installing
 
-    apt install git python3
+    apt install git python3 python3.8-venv
 
 Clone the repository, then:
 
