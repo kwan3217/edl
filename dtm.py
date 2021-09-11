@@ -1,3 +1,7 @@
+"""
+Code for manipulating and merging HiRISE DTMs and saving them as tilesets
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.ndimage import zoom
@@ -7,8 +11,25 @@ import re
 import os
 import multiprocessing
 
+
+def loadmap():
+    wholemap = np.zeros((44 * 128 * 4, 90 * 128 * 4), dtype=np.int16)
+    plt.figure("loadmap")
+    for filerow,filelat in enumerate([-44,0,44,88]):
+        rowname=f"{np.abs(filelat):02d}{'s' if filelat<0 else 'n'}"
+        for filecol,filelon in enumerate([0,90,180,270]):
+            colname=f"{filelon:03d}"
+            filename=f"/mnt/big/home/chrisj/workspace/Data/Planet/Mars/Radius/megr{rowname}{colname}hb.img"
+            maprow=filerow*(44*128)
+            mapcol=filecol*(90*128)
+            wholemap[maprow:maprow+44*128,mapcol:mapcol+90*128]=np.flipud(np.fromfile(filename,dtype=np.dtype('>i2')).reshape(44*128,90*128))
+            plt.imshow(wholemap[::128,::128],origin='lower',extent=[0,360,-88,88])
+            plt.title(filename)
+            plt.pause(0.001)
+    return wholemap.astype(np.float32)
+
 class DTM:
-    def __init__(self,infn=None,filetype='f4',casttype='f4',has_header=True,lat0=None,lon0=None,lat1=None,lon1=None,rows=None,cols=None,blank=-30000,offset=0):
+    def __init__(self,infn=None,data=None,filetype='f4',casttype='f4',has_header=True,lat0=None,lon0=None,lat1=None,lon1=None,rows=None,cols=None,blank=-30000,offset=0):
         """
 
         :param infn:
@@ -73,6 +94,14 @@ class DTM:
                     self.data=self.data.astype(np.dtype(casttype))
                 if self.blank is not None:
                     self.data[np.where(self.data<blank)]=blank-1
+        elif data is not None:
+            self.data=data
+            self.cols=data.shape[1]
+            self.rows=data.shape[0]
+            self.lat0 = lat0
+            self.lon0 = lon0
+            self.lat1 = lat1
+            self.lon1 = lon1
         else:
             self.cols = cols
             self.rows = rows
@@ -98,6 +127,16 @@ class DTM:
         :return:
         """
         return interp2d(self.lon(),self.lat(),self.data)
+    def imshow(self,**kwargs):
+        plt.imshow(self.data[::16,::16],extent=[self.lon0,self.lon1,self.lat0,self.lat1],origin='lower',**kwargs)
+    def conform(self,basemap):
+        """
+        Conform this map to a base map. For each triangle in the base map that overlaps this map, find all the points
+        inside this map which lie within the triangle. Fit a plane through those points, subtract that plane off, then
+        add the plane of the base map triangle.
+        :param basemap:
+        :return:
+        """
 
 class linterp:
     def __init__(self,x0,y0,x1,y1):
@@ -172,22 +211,29 @@ def rotx(theta):
                      [ 0, s, c]])
 mars_r=3396000
 #Note that this runs from 0 to 360 longitude, while radius map runs from -180 to 180
+plt.figure("areoid")
 areoid=DTM("/mnt/big/home/chrisj/workspace/Data/Planet/Mars/Equipotential/mega90n000eb.img",
            filetype='>i2',has_header=False,lat0=-90+1/32,lon0=0+1/32,lat1=90-1/32,lon1=360-1/32,rows=180*16,cols=360*16,offset=mars_r,blank=None)
+areoid.imshow()
+plt.pause(0.001)
+radius=DTM(data=loadmap(),lat0=-88.0+1/256,lat1=88.0-1/256,lon0=0+1/256,lon1=360-1/256)
+print(radius.data.shape)
 #dtm1=DTM("/mnt/big/home/chrisj/workspace/Data/Planet/Mars/Jezero/DTM/DTEEC_023524_1985_023379_1985_U01.IMG")
 #dtm1=DTM("/mnt/big/home/chrisj/workspace/Data/Planet/Mars/Jezero/DTM/DTEEC_023247_1985_022957_1985_U01.IMG")
 #dtm1=union(dtm1,dtm2)
 #del dtm2
-dtm1=DTM("/mnt/big/home/chrisj/workspace/Data/Planet/Mars/Jezero/DTM/DTEEC_048842_1985_048908_1985_U01.IMG")
-#dtm1=union(dtm1,dtm2)
-#del dtm2
+#Jezero delta
+dtm1=DTM("/mnt/big/home/chrisj/workspace/Data/Planet/Mars/Jezero/DTM/DTEEC_002387_1985_003798_1985_A01.IMG")
+#Tile east of Jezero delta, definitely contains landing site
 dtm2=DTM("/mnt/big/home/chrisj/workspace/Data/Planet/Mars/Jezero/DTM/DTEEC_045994_1985_046060_1985_U01.IMG")
 dtm1=union(dtm1,dtm2)
 del dtm2
-dtm2=DTM("/mnt/big/home/chrisj/workspace/Data/Planet/Mars/Jezero/DTM/DTEEC_002387_1985_003798_1985_A01.IMG")
+#Two tiles east of Jezero delta
+dtm2=DTM("/mnt/big/home/chrisj/workspace/Data/Planet/Mars/Jezero/DTM/DTEEC_048842_1985_048908_1985_U01.IMG")
 dtm1=union(dtm1,dtm2)
-plot=False
+del dtm2
 
+plot=False
 if plot:
     plt.figure('dtm1')
     plt.imshow(dtm1.data[::16,::16],origin='lower')
