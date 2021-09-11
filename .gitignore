@@ -6,3 +6,6 @@ entry.ogg
 *.mp4
 *.png
 /inc_*/
+*.wav
+events_*.inc
+
