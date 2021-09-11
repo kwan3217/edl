@@ -1,6 +1,6 @@
 #include "KwanMath.inc"
 #include "topo.inc"
-#include concat("inc/frame_",str(frame_number,-5,0),".inc")
+#include concat("inc_msl/frame_",str(frame_number,-5,0),".inc")
 
 //Calculate frame vectors from state, given above in frame_%05d.inc
 #declare Rhat=vnormalize(R);                 //Local vertical
@@ -92,74 +92,82 @@ cone {
   pigment {color rgb <1,0,1>}
   translate -R
 }
-
-/*
-cone {
-  -vnormalize(Ang)*0.3    ,0.1,
-  +vnormalize(Ang)*0.3+Ang/9.80665,0.0
-  pigment {color rgb <1,0.5,0>}
-  translate -R
-}
-*/
-
 /*
 union {
   object {MSLDescentStage(0,0)}
+  scale <1,1,-1>
   transform {LanderOrient}
 }
 */
+union {
+  object {EntryBalanceMass(0)} translate -0.35*z rotate -8.5*y translate -2.06*x rotate 8.5*y scale <1,1,-1>
+  rotate z*30
+  transform {LanderOrient} translate Rebm0 translate -R
+}
+
+union {
+  object {EntryBalanceMass(0)} translate -0.35*z rotate -8.5*y translate -2.06*x rotate 8.5*y scale <1,1,-1>
+  rotate z*-30
+  transform {LanderOrient} translate Rebm1 translate -R
+}
+
+union {
+  object {EntryBalanceMass(0)} translate -0.35*z rotate -8.5*y translate -2.06*x rotate 8.5*y scale <1,1,-1>
+  rotate z*20
+  transform {LanderOrient} translate Rebm2 translate -R
+}
+
+union {
+  object {EntryBalanceMass(0)} translate -0.35*z rotate -8.5*y translate -2.06*x rotate 8.5*y scale <1,1,-1>
+  rotate z*-20
+  transform {LanderOrient} translate Rebm3 translate -R
+}
+
+union {
+  object {EntryBalanceMass(0)} translate -0.35*z rotate -8.5*y translate -2.06*x rotate 8.5*y scale <1,1,-1>
+  rotate z*10
+  transform {LanderOrient} translate Rebm4 translate -R
+}
+
+union {
+  object {EntryBalanceMass(0)} translate -0.35*z rotate -8.5*y translate -2.06*x rotate 8.5*y scale <1,1,-1>
+  rotate z*-10
+  transform {LanderOrient} translate Rebm5 translate -R
+}
 
 union {
   object {EntryBalanceMass(0)} translate -0.35*z rotate -8.5*y translate -2.06*x rotate 8.5*y
   rotate z*30
   transform {LanderOrient} translate Rebm0 translate -R
 }
+cone {Rebm0,0.1,Rebm0+(Vebm0-V),0 pigment {color rgb <0.2,0.2,0.2>} translate -R}
+cone {Rebm1,0.1,Rebm1+(Vebm1-V),0 pigment {color rgb <0.5,0.25,0>} translate -R}
+cone {Rebm2,0.1,Rebm2+(Vebm2-V),0 pigment {color rgb <1,0,0>} translate -R}
+cone {Rebm3,0.1,Rebm3+(Vebm3-V),0 pigment {color rgb <1,0.5,0>} translate -R}
+cone {Rebm4,0.1,Rebm4+(Vebm4-V),0 pigment {color rgb <1,1,0>} translate -R}
+cone {Rebm5,0.1,Rebm5+(Vebm5-V),0 pigment {color rgb <0,1,0>} translate -R}
+
 
 union {
-  object {EntryBalanceMass(0)} translate -0.35*z rotate -8.5*y translate -2.06*x rotate 8.5*y
-  rotate z*-30
-  transform {LanderOrient} translate Rebm1 translate -R
-}
-
-union {
-  object {EntryBalanceMass(0)} translate -0.35*z rotate -8.5*y translate -2.06*x rotate 8.5*y
-  rotate z*20
-  transform {LanderOrient} translate Rebm2 translate -R
-}
-
-union {
-  object {EntryBalanceMass(0)} translate -0.35*z rotate -8.5*y translate -2.06*x rotate 8.5*y
-  rotate z*-20
-  transform {LanderOrient} translate Rebm3 translate -R
-}
-
-union {
-  object {EntryBalanceMass(0)} translate -0.35*z rotate -8.5*y translate -2.06*x rotate 8.5*y
-  rotate z*10
-  transform {LanderOrient} translate Rebm4 translate -R
-}
-
-union {
-  object {EntryBalanceMass(0)} translate -0.35*z rotate -8.5*y translate -2.06*x rotate 8.5*y
-  rotate z*-10
-  transform {LanderOrient} translate Rebm5 translate -R
-}
-
-union {
-  object {Backshell}
-  cylinder {0,x*3,0.005 pigment {color rgb x}}
-  cylinder {0,y*3,0.005 pigment {color rgb y}}
-  cylinder {0,z*3,0.005 pigment {color rgb z}}
+//  object {Backshell   scale <1,1,-1>}
+  cylinder {0, x*3,0.005 pigment {color rgb x}}
+  cylinder {0, y*3,0.005 pigment {color rgb y}}
+  cylinder {0, z*3,0.005 pigment {color rgb z}}
+  cylinder {0,-x*3,0.005 pigment {color rgb <1,1,1>-x}}
+  cylinder {0,-y*3,0.005 pigment {color rgb <1,1,1>-y}}
+  cylinder {0,-z*3,0.005 pigment {color rgb <1,1,1>-z}}
   transform {LanderOrient}
   translate Rbs
   translate -R
 }
 
+#include "EntryFlame.inc"
 union {
-  object {Heatshield transform {LanderOrient}}
+  object {Heatshield scale <1,1,-1> transform {LanderOrient}}
   translate Rhs
   translate -R
 }
+#if(vlength(Vhs-V)>0) cone {Rhs,0.1,Rhs+(Vhs-V),0 pigment {color rgb <0,0,1>} translate -R} #end
 
 #declare SkycraneStartFrame=9630;
 #declare RappelTime=(frame_number-SkycraneStartFrame)/24;
@@ -171,6 +179,7 @@ union {
 
 union {
   MSLRover(1,1,1)
+  scale <1,1,-1>
   translate -z*RappelDist
   transform {LanderOrient}
 }
@@ -246,16 +255,11 @@ light_source {
 
 //#declare Location=Look_at+Rhat*7;
 
-light_source {
-  Location-R
-  color rgb 1
-}
-
 camera {
   up y
   right -x*image_width/image_height
-  sky Rhat
-  //angle 20
+  sky Sky
+  //angle 30
   location Location-R
   look_at Look_at-R
 }

@@ -1,10 +1,12 @@
 import numpy as np
 import re
 import vector
+from collections import namedtuple
 
 path="/mnt/big/home/chrisj/workspace/Data/Planet/Mars/Jezero/Topography/"
 
-def read_tile_csv():
+heightTilesReturn=namedtuple("heightTilesReturn","latc lonc tiles")
+def read_height_tile_csv():
     tiles={}
     for i in [8,9,10,11,12]:
         n_y=64//2**(i-8)
@@ -32,7 +34,7 @@ def read_tile_csv():
             col=int(parts[1])
             row=int(parts[2])
             tiles[level][col,row,:]=coords
-    return latc,lonc,tiles
+    return heightTilesReturn(latc=latc,lonc=lonc,tiles=tiles)
 
 def rotz(theta):
     c=np.cos(theta)
@@ -100,7 +102,7 @@ def is_tile_close_enough(tiles,location,look_at,camin,level,i_x,i_y,rad_pixel):
     if dist:
         if level==12:
             return True #Early exit for coarsest level
-        closest_tilepix_angle = (2 ** (level-8)/1000) / dist
+        closest_tilepix_angle = (2 ** (level-8)) / dist
         return closest_tilepix_angle>rad_pixel
     return False
 
@@ -181,23 +183,23 @@ def frame(i_frame,*,Location,Look_at,latc,lonc,tiles,ouf=None):
     close_self=ouf is None
     if close_self:
         ouf=open(f"inc/tile{frame:03d}.inc", "wt")
-    print("//Generated in tile.py")
-    print(f"#declare Location=<{Location[0, 0]},{Location[1, 0]},{Location[2, 0]}>;", file=ouf)
+    print("//Generated in tile.py",file=ouf)
+    print(f"#declare Location=<{Location[0,0]},{Location[1, 0]},{Location[2, 0]}>;", file=ouf)
     print(f"#declare Look_at=<{Look_at[0, 0]},{Look_at[1, 0]},{Look_at[2, 0]}>;", file=ouf)
-    a = height_tile_map(Location, Look_at, tiles=tiles)
+    a = height_tile_map(Location, Look_at, tiles=tiles,latc=latc,lonc=lonc)
     for level in a:
         for i_x in range(a[level].shape[0]):
             for i_y in range(a[level].shape[1]):
                 if (a[level][i_x, i_y]):
-                    print(f"tile({level:2d},{i_x:2d},{i_y:2d})", file=ouf)
+                    print(f"height_tile({level:2d},{i_x:2d},{i_y:2d})", file=ouf)
     if close_self:
         ouf.close()
 
 if __name__=="__main__":
-    latc, lonc, tiles = read_tile_csv()
+    latc, lonc, tiles = read_height_tile_csv()
     for i_frame in range(0,1000):
-        Location=np.array([[0],[-8],[frame/100+3391.9]])
-        Look_at=np.array([[0],[0],[3391.9]])
+        Location=np.array([[0],[-8],[frame*10+3391900]])
+        Look_at=np.array([[0],[0],[3391900]])
         frame(frame,Location=Location,Look_at=Look_at,latc=latc,lonc=lonc,tiles=tiles)
         print(".", end='')
         if (i_frame % 100 == 0):

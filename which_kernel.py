@@ -182,6 +182,9 @@ def which_kernel(type,obj,t,flush=False):
                     this_window[i_kernel,i_window,1]=right
             which_kernel.windows[key]=this_window
             which_kernel.files[utype]=this_files
+        if t is None:
+            #No time specified, return the last kernel that references this object at all
+            return this_files[-1]
         try:
             n_elements_t=len(t)
         except:
