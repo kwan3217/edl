@@ -8,4 +8,5 @@ entry.ogg
 /inc_*/
 *.wav
 events_*.inc
-
+.idea/
+__pycache__/
