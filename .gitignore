@@ -10,3 +10,10 @@ entry.ogg
 events_*.inc
 .idea/
 __pycache__/
+FromYouTube/
+soundtrack/
+spice
+venv/
+*-????.kdenlive
+*_backup?.kdenlive
+
