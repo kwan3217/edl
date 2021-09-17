@@ -1,3 +1,4 @@
+//#version 3.7
 #include "KwanMath.inc"
 #include "loc_look.inc"
 #include "topo.inc"
@@ -54,6 +55,7 @@ PrintNumber("dynHeat: ",dynHeat)
 #declare Lhat=vnormalize(LH*Hhat+LK*Khat);   //Lift vector
 #declare MarsR=vlength(Rland)-1000; //Sphere radius used for where there is no terrain model
 
+#declare Look_at = Rcenter;
 #switch(ET)
   #range(0,ET_mortar - 20)
     #declare Angle = 0;
@@ -72,9 +74,11 @@ PrintNumber("dynHeat: ",dynHeat)
     #declare Rbasis = Rhat;
     #break
   #range(ET_mortar-15,ET_heatshield+100)
-    #declare Angle = -pi / 2;
-    #declare Dist = 10;
-    #declare Height = 0;
+    //Step back for chute deploy
+    #declare Angle=-pi/2;
+    #declare Dist=ASDR(ET_mortar-4,ET_mortar-2,ET_heatshield-4,ET_heatshield-2,10,75,ET);
+    #declare Look_at=ASDR(ET_mortar-4,ET_mortar-2,ET_heatshield-4,ET_heatshield-2,Rcenter,Rcenter-Vhat*25,ET);
+    #declare Height=0;
     #declare Qbasis = Qhat;
     #declare Hbasis = Hhat;
     #declare Rbasis = Rhat;
@@ -95,7 +99,6 @@ PrintNumber("dynHeat: ",dynHeat)
     #declare Hbasis = Nhat;
     #declare Rbasis = Rhat;
 #end
-#declare Look_at = Rcenter;
 #declare Location = Look_at - Dist * cos(Angle) * Qbasis - Dist * sin(Angle) * Hbasis + Height * Rbasis;
 #declare Sky = Rhat;
 
@@ -241,6 +244,39 @@ union {
 }
 #end
 
+#if(ET>ET_mortar)
+  #declare Message0=array[8] {
+  asc("F")-asc("A")+1,
+  asc("L")-asc("A")+1,
+  asc("Y")-asc("A")+1,
+  127,1023,1023,1023,1023}
+  #declare Message1=array[8] {
+  asc("F")-asc("A")+1,
+  asc("L")-asc("A")+1,
+  asc("Y")-asc("A")+1,
+  127,1023,1023,1023,1023}
+  #declare Message2=array[8] {
+  asc("A")-asc("A")+1,
+  asc("G")-asc("A")+1,
+  asc("A")-asc("A")+1,
+  asc("I")-asc("A")+1,
+  asc("N")-asc("A")+1,
+  127,1023,1023}
+  #declare Message3=array[8] {
+  40,11,34,
+  asc("N")-asc("A")+1,
+  105,5,24,
+  asc("W")-asc("A")+1
+  }
+  #include "MSLChute.inc"
+
+  object {
+    MSLChute(ET)
+    transform {LanderOrient}
+    translate Rbs-Rcenter
+  }
+#end
+
 #declare RappelTime=ET-ET_rappel0;
 #declare RoverCf=BLinterp(5,1,6,0,RappelTime);
 #declare RoverCa=BLinterp(5,1,6,0,RappelTime);
@@ -358,3 +394,5 @@ camera {
   look_at Look_at-Rcenter
 }
 
+//global_settings {assumed_gamma 1.0}
+PrintNumber("Frame: ",frame_number)
