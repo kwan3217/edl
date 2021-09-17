@@ -17,3 +17,7 @@ venv/
 *-????.kdenlive
 *_backup?.kdenlive
 
+*.aiff
+*.wav
+*.mp4
+
