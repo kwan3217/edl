@@ -18,7 +18,7 @@
 #include "events_m20_recon.inc"
 #include concat("inc_m20_recon/step_",str(frame_number,-5,0),".inc")
 #include "MSLRover.inc"
-#include "MSLAeroshell2.inc"
+#include "MSLAeroshell.inc"
 #include "MSLDescentStage.inc"
 
 #declare Vrel=vlength(Vds);
