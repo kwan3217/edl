@@ -4,10 +4,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from vector import vlength
-from which_kernel import which_kernel, ls_spice
+from kwanspice.which_kernel import which_kernel, ls_spice
 from kwanspice.daf import double_array_file
 import matplotlib.pyplot as plt
 import spiceypy
+from hud import HUD
+from picturebox import PictureBox
 
 
 class M20ReconTrajectory(CKTrajectory):
@@ -159,6 +161,8 @@ class M20ReconTrajectory(CKTrajectory):
                                               m=self.mass["EntryBalanceMass"][f"Mass{i}"], cd=1, r0vb=r0ebmvb[i], v0vb=v0ebmvb[i])
         self.dropobjs=dropobjs
         self.write_events()
+        self.cache_fields = self.cache_fields + ["rovsvr", "Ftot", "Fvert", "throttle_straight", "throttle_cant",
+                                               "pdv_mass", "delta_v", "prop_used"]
         self._calc()
     def _spice(self):
         super()._spice()
@@ -227,8 +231,8 @@ class M20ReconTrajectory(CKTrajectory):
         self.throttle_straight=smooth(self.throttle_straight,-50,50)
         self.throttle_cant=smooth(self.throttle_cant,-50,50)
         self.plot_throttle()
-    def _tabulate(self):
-        super()._tabulate()
+    def tabulate(self):
+        super().tabulate()
         self.t_rovsvr=Tableterp(self.ets,self.rovsvr)
         self.t_Ftot=Tableterp(self.ets,self.Ftot)
         self.t_Fvert=Tableterp(self.ets,self.Fvert)
@@ -280,6 +284,10 @@ class M20ReconTrajectory(CKTrajectory):
         plt.legend()
         plt.pause(0.001)
 
+class JPLHUD(HUD):
+    def draw_frame(self,i,et,pb:PictureBox):
+        pb.line(100,100,200,200,color='k',linewidth=5)
+
 
 if __name__=="__main__":
     M20=M20ReconTrajectory()
@@ -287,4 +295,6 @@ if __name__=="__main__":
         M20.plot()
         plt.show()
     else:
+        hud=JPLHUD(M20,"Frames_recon_hud/hud_%05d.png")
+        hud.write_frames(et0=M20.events["ei"]-5,et1=M20.events["land"]+5,fps=30)
         M20.write_frames(et0=M20.events["ei"]-5,et1=M20.events["land"]+5,fps=30,do_tiles=False)
