@@ -85,6 +85,7 @@ from vector import vlength, vcomp, vdecomp, vdot, vcross
 from mars_atm import mars_atm
 import tile
 from which_kernel import ls_spice
+import os.path
 
 import kwanspice
 
@@ -311,8 +312,11 @@ def aTwoBody(svi,*,gm):
 
 
 #Event frame numbers
+bodyTuple_fields=["pov_suffix","et0","a","m","cd","r0vb","v0vb"]
 eventTuple=namedtuple("eventTuple","entry0 sufr0 ebm sufr1 chute0 chute1 heatshield backshell skycrane touchdown")
-bodyTuple=namedtuple("bodyTuple","pov_suffix et0 a m cd r0vb v0vb",defaults=(np.zeros((3,1)),np.zeros((3,1))))
+bodyTuple=namedtuple("bodyTuple"," ".join(bodyTuple_fields),defaults=(np.zeros((3,1)),np.zeros((3,1))))
+droptrajResult = namedtuple("droptrajResult", "drop svf svr")
+
 
 def et2pdt(t):
     """
@@ -413,19 +417,43 @@ class Trajectory:
         self.Cheat = Cheat
         self.mheat = mheat
         self.nheat = nheat
+        self.cache_path="cache_"+self.name+"/"
         self.DIMU_A_ofs=np.array([[-0.958],[0.641],[1.826]]) if DIMU_A_ofs is None else DIMU_A_ofs
+        self.cache_fields=["ets","svr","angvf","sunr","earthr","earthlt","Msrf","Mpfb","csound","rho","P","T","scorch","omega","omegadot"]
     def _calc(self):
-        self._time()
-        self._spice()
-        self._atm()
-        self._vrel()
-        self._heat()
-        self._acc()
-        self._lvlh()
-        self._att()
-        self._body_rate()
-        self._rel()
-        self._drops()
+        if not self._read_cache():
+            self._time()
+            self._spice()
+            self._atm()
+            self._vrel()
+            self._heat()
+            self._acc()
+            self._lvlh()
+            self._att()
+            self._body_rate()
+            self._rel()
+            self._drops()
+            self._write_cache()
+    def _read_cache(self):
+        if not os.path.exists(self.cache_path+"/ets.npy"):
+            return False
+        print("Reading cache...")
+        for name in self.cache_fields:
+            self.__dict__[name]=np.load(self.cache_path + "/" + name + ".npy")
+        self.droptraj={}
+        for name, drop in self.dropobjs.items():
+            self.droptraj[name]=droptrajResult(drop=drop,
+                                               svf=np.load(self.cache_path + "/droptraj_" + name + "_svf.npy"),
+                                               svr=np.load(self.cache_path + "/droptraj_" + name + "_svr.npy"))
+        return True
+    def _write_cache(self):
+        print("Writing cache...")
+        for name in self.cache_fields:
+            np.save(self.cache_path+"/"+name+".npy",self.__dict__[name])
+        for name, drop in self.droptraj.items():
+            np.save(self.cache_path+"/droptraj_"+name+"_svr.npy",drop.svr)
+            np.save(self.cache_path+"/droptraj_"+name+"_svf.npy",drop.svf)
+
     def _time(self):
         """
         Establish the time scales
@@ -770,7 +798,6 @@ class Trajectory:
     def _drops(self):
         if self.dropobjs is not None:
             self.droptraj = {}
-            droptrajResult = namedtuple("droptrajResult", "drop svf svr")
             for name, dropobj in self.dropobjs.items():
                 print(f"Propagating dropped object: {name}")
                 bsvf = self._drop(dropobj=dropobj)
@@ -783,7 +810,7 @@ class Trajectory:
         self.vhatr,self.hhatr,self.qhatr,self.khatr=Mtrans(Mr(self.Msrf),self.vhatf,self.hhatf,self.qhatf,self.khatf)
         self.lhatr                                 =Mtrans(Mr(self.Msrf),self.lhatf)
         (self.lon, self.lat, self.r) = xyz2llr(rv(self.svr))
-    def _tabulate(self):
+    def tabulate(self):
         self.t_svr=Tableterp(self.ets,self.svr)
         self.t_angvr=Tableterp(self.ets,Mtrans(Mr(self.Msrf),self.angvf))
         self.t_sunr = Tableterp(self.ets, self.sunr)
@@ -916,7 +943,7 @@ class Trajectory:
                 print(f'#declare Events[{i_event}]={et:16.6f};#declare EventNames[{i_event}]="{name}";', file=ouf)
     def write_frames(self, *, et0:float,et1:float,fps:float,step0:int=0, step1:int=None, do_tiles:bool=False):
         print("Interpolating trajectory...")
-        self._tabulate()
+        self.tabulate()
         print("Writing frames...")
         if do_tiles:
             tiles = tile.read_height_tile_csv()
