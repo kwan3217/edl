@@ -1,11 +1,12 @@
+/Frames_*/
+/cache_*/
+/inc_*/
 color/
-Frames_*/
 inc/
 orange/
 entry.ogg
 *.mp4
 *.png
-/inc_*/
 *.wav
 events_*.inc
 .idea/
