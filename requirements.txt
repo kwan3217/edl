@@ -5,4 +5,5 @@ spiceypy
 matplotlib
 -e git+https://github.com/kwan3217/picturebox.git#egg=picturebox
 -e git+https://github.com/kwan3217/vector.git#egg=vector
+-e git+https://github.com/kwan3217/kwanspice.git#egg=kwanspice
 
