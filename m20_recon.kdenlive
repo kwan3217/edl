@@ -931,6 +931,11 @@
         "comment": "Heatshield",
         "pos": 109,
         "type": 0
+    },
+    {
+        "comment": "LVS 003",
+        "pos": 132,
+        "type": 1
     }
 ]
 </property>
@@ -1382,26 +1387,1596 @@
   <property name="meta.media.progressive">1</property>
   <property name="global_feed">1</property>
  </producer>
- <producer id="producer17" in="00:00:00.000" out="00:00:04.967">
-  <property name="length">00:00:05.000</property>
+ <producer id="producer17" in="00:00:00.000" out="00:01:12.033">
+  <property name="length">00:01:12.067</property>
   <property name="eof">pause</property>
-  <property name="resource">Frames_recon_hud/hud_00000.png</property>
+  <property name="resource">Frames_recon_hud/hud_%05d.png</property>
+  <property name="ttl">1</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1920</property>
+  <property name="meta.media.height">1080</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname">hud_</property>
+  <property name="luma_duration">30</property>
+  <property name="fade">0</property>
+  <property name="crop">0</property>
+  <property name="loop">0</property>
+  <property name="kdenlive:duration">00:01:12.067</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">20</property>
+  <property name="kdenlive:file_hash">f053d0e4cd468a13dec41574a8884327</property>
+  <property name="global_feed">1</property>
+ </producer>
+ <producer id="producer18" in="00:00:00.000" out="00:00:05.233">
+  <property name="length">158</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_000.png</property>
   <property name="ttl">25</property>
   <property name="aspect_ratio">1</property>
   <property name="progressive">1</property>
   <property name="seekable">1</property>
-  <property name="meta.media.width">1280</property>
-  <property name="meta.media.height">720</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
   <property name="mlt_service">qimage</property>
   <property name="kdenlive:clipname"/>
   <property name="kdenlive:duration">00:00:05.000</property>
-  <property name="kdenlive:folderid">-1</property>
-  <property name="kdenlive:id">19</property>
-  <property name="kdenlive:file_size">5818</property>
-  <property name="kdenlive:file_hash">0add822ad805efef0e9c05d3fff1fcb4</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">23</property>
+  <property name="kdenlive:file_size">257480</property>
+  <property name="kdenlive:file_hash">c6a1a9c94074dbf350c6014abe3d62d6</property>
+ </producer>
+ <producer id="producer19" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_001.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">25</property>
+  <property name="kdenlive:file_size">247792</property>
+  <property name="kdenlive:file_hash">d6fcf69a9707cc47e6e6f10984a5fc18</property>
+ </producer>
+ <producer id="producer20" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_002.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">26</property>
+  <property name="kdenlive:file_size">249099</property>
+  <property name="kdenlive:file_hash">a98be2f223b40d8fb3607bd8513d7e62</property>
+ </producer>
+ <producer id="producer21" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_003.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">27</property>
+  <property name="kdenlive:file_size">484245</property>
+  <property name="kdenlive:file_hash">2bb56666463dd933f78cea3dade1f8b2</property>
+ </producer>
+ <producer id="producer22" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_004.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">28</property>
+  <property name="kdenlive:file_size">456725</property>
+  <property name="kdenlive:file_hash">8e75fe263f50104e81265fb6a16c041f</property>
+ </producer>
+ <producer id="producer23" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_005.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">29</property>
+  <property name="kdenlive:file_size">473697</property>
+  <property name="kdenlive:file_hash">598e0afa933383c8bb370b26f4710db3</property>
+ </producer>
+ <producer id="producer24" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_006.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">30</property>
+  <property name="kdenlive:file_size">464152</property>
+  <property name="kdenlive:file_hash">9bd6698e37ce1b473f81abb7e5dc50ab</property>
+ </producer>
+ <producer id="producer25" in="00:00:00.000" out="00:00:07.867">
+  <property name="length">237</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_007.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">31</property>
+  <property name="kdenlive:file_size">495881</property>
+  <property name="kdenlive:file_hash">19d52dcb040e7976b8d5f08aa6f3053f</property>
+ </producer>
+ <producer id="producer26" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_008.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">32</property>
+  <property name="kdenlive:file_size">486124</property>
+  <property name="kdenlive:file_hash">95c3e2bd580fcb386e268245b70eb16f</property>
+ </producer>
+ <producer id="producer27" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_009.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">33</property>
+  <property name="kdenlive:file_size">513899</property>
+  <property name="kdenlive:file_hash">79f5889e1ab442b26017739cae9d36d2</property>
+ </producer>
+ <producer id="producer28" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_010.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">34</property>
+  <property name="kdenlive:file_size">504484</property>
+  <property name="kdenlive:file_hash">2bef2cd764ad956c992bd8a714a3824f</property>
+ </producer>
+ <producer id="producer29" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_011.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">35</property>
+  <property name="kdenlive:file_size">507809</property>
+  <property name="kdenlive:file_hash">d160ee36164a13240b214c7efd6ca056</property>
+ </producer>
+ <producer id="producer30" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_012.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">36</property>
+  <property name="kdenlive:file_size">507555</property>
+  <property name="kdenlive:file_hash">113bab52457be6c2760ecaed83bf96f1</property>
+ </producer>
+ <producer id="producer31" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_013.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">37</property>
+  <property name="kdenlive:file_size">510658</property>
+  <property name="kdenlive:file_hash">39eef3f29191709c0bc5d86a61a913e6</property>
+ </producer>
+ <producer id="producer32" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_014.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">38</property>
+  <property name="kdenlive:file_size">508797</property>
+  <property name="kdenlive:file_hash">d9a00262474b8c462961f95c46b0418c</property>
+ </producer>
+ <producer id="producer33" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_015.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">39</property>
+  <property name="kdenlive:file_size">503215</property>
+  <property name="kdenlive:file_hash">0df9ac1081194a16a8ff8f1192ed7861</property>
+ </producer>
+ <producer id="producer34" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_016.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">40</property>
+  <property name="kdenlive:file_size">499412</property>
+  <property name="kdenlive:file_hash">4963796484793fd673133ba238b6d114</property>
+ </producer>
+ <producer id="producer35" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_017.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">41</property>
+  <property name="kdenlive:file_size">513690</property>
+  <property name="kdenlive:file_hash">2b04fe9193d431cb919bf587599df9af</property>
+ </producer>
+ <producer id="producer36" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_018.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">42</property>
+  <property name="kdenlive:file_size">495369</property>
+  <property name="kdenlive:file_hash">bfd96ecf32d5e5c99f37cc873e41b2e9</property>
+ </producer>
+ <producer id="producer37" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_019.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">43</property>
+  <property name="kdenlive:file_size">511222</property>
+  <property name="kdenlive:file_hash">461e0e70beb02677c87ef84a740b8145</property>
+ </producer>
+ <producer id="producer38" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_020.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">44</property>
+  <property name="kdenlive:file_size">505725</property>
+  <property name="kdenlive:file_hash">4fa8cb1a2a0d31ce75f47f52d6cda4a0</property>
+ </producer>
+ <producer id="producer39" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_021.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">45</property>
+  <property name="kdenlive:file_size">492813</property>
+  <property name="kdenlive:file_hash">4fdaae4a28f7573298b864454c178183</property>
+ </producer>
+ <producer id="producer40" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_022.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">46</property>
+  <property name="kdenlive:file_size">507747</property>
+  <property name="kdenlive:file_hash">8639ec4114333d2140da3fcf52b4664c</property>
+ </producer>
+ <producer id="producer41" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_023.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">47</property>
+  <property name="kdenlive:file_size">513870</property>
+  <property name="kdenlive:file_hash">fb64286becf87179df7f783d3ef9a872</property>
+ </producer>
+ <producer id="producer42" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_024.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">48</property>
+  <property name="kdenlive:file_size">507467</property>
+  <property name="kdenlive:file_hash">be1e58e71ff9e83b9e7bdd469fb68d5f</property>
+ </producer>
+ <producer id="producer43" in="00:00:00.000" out="00:00:05.167">
+  <property name="length">156</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_025.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">49</property>
+  <property name="kdenlive:file_size">485839</property>
+  <property name="kdenlive:file_hash">01b4766326112e07716be6e6af87b1db</property>
+ </producer>
+ <producer id="producer44" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_026.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">50</property>
+  <property name="kdenlive:file_size">503485</property>
+  <property name="kdenlive:file_hash">26aba026ea6157140785f3de9cfe5e45</property>
+ </producer>
+ <producer id="producer45" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_027.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">51</property>
+  <property name="kdenlive:file_size">506211</property>
+  <property name="kdenlive:file_hash">f6e2ad812b06c2e3a571edd9b3f3376a</property>
+ </producer>
+ <producer id="producer46" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_028.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">52</property>
+  <property name="kdenlive:file_size">505662</property>
+  <property name="kdenlive:file_hash">de92e967b5fb3b6930fdf98969f33da5</property>
+ </producer>
+ <producer id="producer47" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_029.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">53</property>
+  <property name="kdenlive:file_size">506369</property>
+  <property name="kdenlive:file_hash">0e5adbd0760af1716e3a68ec2445c734</property>
+ </producer>
+ <producer id="producer48" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_030.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">54</property>
+  <property name="kdenlive:file_size">504836</property>
+  <property name="kdenlive:file_hash">ab078d78c09f9f5840846e797c67cfe4</property>
+ </producer>
+ <producer id="producer49" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_031.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">55</property>
+  <property name="kdenlive:file_size">486591</property>
+  <property name="kdenlive:file_hash">78cd9f04deddcd0337149c5de3309241</property>
+ </producer>
+ <producer id="producer50" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_032.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">56</property>
+  <property name="kdenlive:file_size">504001</property>
+  <property name="kdenlive:file_hash">f0f6652e3a77b6aa4607e65ea8c113f8</property>
+ </producer>
+ <producer id="producer51" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_033.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">57</property>
+  <property name="kdenlive:file_size">504282</property>
+  <property name="kdenlive:file_hash">382b347f0e3845814bc3c9cc03249849</property>
+ </producer>
+ <producer id="producer52" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_034.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">58</property>
+  <property name="kdenlive:file_size">500267</property>
+  <property name="kdenlive:file_hash">3f7eee19355e054409337ea262bd725b</property>
+ </producer>
+ <producer id="producer53" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_035.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">59</property>
+  <property name="kdenlive:file_size">489146</property>
+  <property name="kdenlive:file_hash">91873bc4c378c17c78822cc2b802868c</property>
+ </producer>
+ <producer id="producer54" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_036.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">60</property>
+  <property name="kdenlive:file_size">446752</property>
+  <property name="kdenlive:file_hash">f1a734f4ad6df5792123897fbfee1248</property>
+ </producer>
+ <producer id="producer55" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_037.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">61</property>
+  <property name="kdenlive:file_size">507108</property>
+  <property name="kdenlive:file_hash">b704a717229909a012de01109fd102a2</property>
+ </producer>
+ <producer id="producer56" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_038.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">62</property>
+  <property name="kdenlive:file_size">510193</property>
+  <property name="kdenlive:file_hash">2c1044236670ab850cc21920eb669b06</property>
+ </producer>
+ <producer id="producer57" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_039.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">63</property>
+  <property name="kdenlive:file_size">511750</property>
+  <property name="kdenlive:file_hash">04cb93f899a98588cfbe88d558bf4e66</property>
+ </producer>
+ <producer id="producer58" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_040.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">64</property>
+  <property name="kdenlive:file_size">513959</property>
+  <property name="kdenlive:file_hash">9c5cc37319d29a6cda40618269f10d1e</property>
+ </producer>
+ <producer id="producer59" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_041.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">65</property>
+  <property name="kdenlive:file_size">511784</property>
+  <property name="kdenlive:file_hash">377e918a48c3b352a3d6c899fba60e65</property>
+ </producer>
+ <producer id="producer60" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_042.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">66</property>
+  <property name="kdenlive:file_size">516164</property>
+  <property name="kdenlive:file_hash">25010932370d79e9f5a0e795f035a590</property>
+ </producer>
+ <producer id="producer61" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_043.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">67</property>
+  <property name="kdenlive:file_size">516199</property>
+  <property name="kdenlive:file_hash">babc28490cfbafade4d9ce03c871c811</property>
+ </producer>
+ <producer id="producer62" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_044.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">68</property>
+  <property name="kdenlive:file_size">518355</property>
+  <property name="kdenlive:file_hash">36331c31b47f6c9cb71f85bb2ea93f90</property>
+ </producer>
+ <producer id="producer63" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_045.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">69</property>
+  <property name="kdenlive:file_size">517847</property>
+  <property name="kdenlive:file_hash">e7ae72f4789f04494d9a30d2ce179c9d</property>
+ </producer>
+ <producer id="producer64" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_046.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">70</property>
+  <property name="kdenlive:file_size">524893</property>
+  <property name="kdenlive:file_hash">531ca174153833e468b5154f134cb166</property>
+ </producer>
+ <producer id="producer65" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_047.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">71</property>
+  <property name="kdenlive:file_size">529225</property>
+  <property name="kdenlive:file_hash">c56cdf84564d9d3de3c9db5fd269b146</property>
+ </producer>
+ <producer id="producer66" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_048.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">72</property>
+  <property name="kdenlive:file_size">528996</property>
+  <property name="kdenlive:file_hash">3688b37e30c4a756304a13f42a03ae85</property>
+ </producer>
+ <producer id="producer67" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_049.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">73</property>
+  <property name="kdenlive:file_size">472276</property>
+  <property name="kdenlive:file_hash">299e79848238356d6f2ed38ab6128aee</property>
+ </producer>
+ <producer id="producer68" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_050.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">74</property>
+  <property name="kdenlive:file_size">513031</property>
+  <property name="kdenlive:file_hash">e0c0ced7966ad98202bc59cd93b1e4c8</property>
+ </producer>
+ <producer id="producer69" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_051.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">75</property>
+  <property name="kdenlive:file_size">524381</property>
+  <property name="kdenlive:file_hash">07a2eeea8f4ca0ad3efb95053e0d7646</property>
+ </producer>
+ <producer id="producer70" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_052.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">76</property>
+  <property name="kdenlive:file_size">525051</property>
+  <property name="kdenlive:file_hash">1624be8095a2849d6e4c0699762f29c1</property>
+ </producer>
+ <producer id="producer71" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_053.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">77</property>
+  <property name="kdenlive:file_size">515290</property>
+  <property name="kdenlive:file_hash">3e232ae496c5c373b758761baea6c367</property>
+ </producer>
+ <producer id="producer72" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_054.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">78</property>
+  <property name="kdenlive:file_size">517304</property>
+  <property name="kdenlive:file_hash">d61d8dab5766ffd9dae0c99e65d40520</property>
+ </producer>
+ <producer id="producer73" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_055.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">79</property>
+  <property name="kdenlive:file_size">513759</property>
+  <property name="kdenlive:file_hash">506b34b5a03a0e3bd78a3997b66ee464</property>
+ </producer>
+ <producer id="producer74" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_056.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">80</property>
+  <property name="kdenlive:file_size">521918</property>
+  <property name="kdenlive:file_hash">8636ec643c99895a66c1af4b59f2ca2a</property>
+ </producer>
+ <producer id="producer75" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_057.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">81</property>
+  <property name="kdenlive:file_size">487675</property>
+  <property name="kdenlive:file_hash">6e8165b9d75e469c330294273b3dcfa4</property>
+ </producer>
+ <producer id="producer76" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_058.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">82</property>
+  <property name="kdenlive:file_size">485901</property>
+  <property name="kdenlive:file_hash">4f4488625b7552f10205ef07e20fc330</property>
+ </producer>
+ <producer id="producer77" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_059.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">83</property>
+  <property name="kdenlive:file_size">556357</property>
+  <property name="kdenlive:file_hash">b75c86b29399c383aec5f08ae8bdf2a3</property>
+ </producer>
+ <producer id="producer78" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_060.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">84</property>
+  <property name="kdenlive:file_size">559895</property>
+  <property name="kdenlive:file_hash">caec01a9db6d313fe4dbce8a3e894566</property>
+ </producer>
+ <producer id="producer79" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_061.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">85</property>
+  <property name="kdenlive:file_size">573547</property>
+  <property name="kdenlive:file_hash">e6cbf9e9215a34398e982da40259fa91</property>
+ </producer>
+ <producer id="producer80" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_062.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">86</property>
+  <property name="kdenlive:file_size">578458</property>
+  <property name="kdenlive:file_hash">6a32e1ee8c0b74550c3bbb3c27c33e40</property>
+ </producer>
+ <producer id="producer81" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_063.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">87</property>
+  <property name="kdenlive:file_size">574068</property>
+  <property name="kdenlive:file_hash">a647cf019324f4b2179f0078dd2da174</property>
+ </producer>
+ <producer id="producer82" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_064.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">88</property>
+  <property name="kdenlive:file_size">556460</property>
+  <property name="kdenlive:file_hash">0236e9dc7dddfedfcd99e01d04cc8c71</property>
+ </producer>
+ <producer id="producer83" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_065.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">89</property>
+  <property name="kdenlive:file_size">547969</property>
+  <property name="kdenlive:file_hash">daaf1ebbb24ee153a055b7ab44895688</property>
+ </producer>
+ <producer id="producer84" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_066.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">90</property>
+  <property name="kdenlive:file_size">535099</property>
+  <property name="kdenlive:file_hash">2936adbc8a5693a6e6c2bd80babfc086</property>
+ </producer>
+ <producer id="producer85" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_067.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">91</property>
+  <property name="kdenlive:file_size">503873</property>
+  <property name="kdenlive:file_hash">7866b73bd77f62778ef2a811ad0cd5ba</property>
+ </producer>
+ <producer id="producer86" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_068.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">92</property>
+  <property name="kdenlive:file_size">550626</property>
+  <property name="kdenlive:file_hash">39511ee590c79d59a71c6ae9323c5f75</property>
+ </producer>
+ <producer id="producer87" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_069.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">93</property>
+  <property name="kdenlive:file_size">549535</property>
+  <property name="kdenlive:file_hash">c59e82aecb41bb92bd1c2c9f101dab46</property>
+ </producer>
+ <producer id="producer88" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_070.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">94</property>
+  <property name="kdenlive:file_size">575331</property>
+  <property name="kdenlive:file_hash">ba183c01f42d31433f6adff8a0c9e40e</property>
+ </producer>
+ <producer id="producer89" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_071.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">95</property>
+  <property name="kdenlive:file_size">575205</property>
+  <property name="kdenlive:file_hash">de48eba639866258e8942c54d24b7888</property>
+ </producer>
+ <producer id="producer90" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_072.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">96</property>
+  <property name="kdenlive:file_size">578311</property>
+  <property name="kdenlive:file_hash">194db1e3618344b74a472db2c56ff043</property>
+ </producer>
+ <producer id="producer91" in="00:00:00.000" out="00:00:05.067">
+  <property name="length">153</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_073.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">97</property>
+  <property name="kdenlive:file_size">537192</property>
+  <property name="kdenlive:file_hash">b908198b0075e00f1f9db5cca81891e6</property>
+ </producer>
+ <producer id="producer92" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_074.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">98</property>
+  <property name="kdenlive:file_size">511029</property>
+  <property name="kdenlive:file_hash">8e6d94c67e296118054ace9daf7b554f</property>
+ </producer>
+ <producer id="producer93" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_075.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">99</property>
+  <property name="kdenlive:file_size">418090</property>
+  <property name="kdenlive:file_hash">cbc119b43613c959c5a82e3057a86a72</property>
+ </producer>
+ <producer id="producer94" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_076.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">100</property>
+  <property name="kdenlive:file_size">428944</property>
+  <property name="kdenlive:file_hash">f184080fa468191e7f5dd9559d5474db</property>
+ </producer>
+ <producer id="producer95" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_077.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">101</property>
+  <property name="kdenlive:file_size">396276</property>
+  <property name="kdenlive:file_hash">f043b90b375961ffa219cbb25a0a888b</property>
+ </producer>
+ <producer id="producer96" in="00:00:00.000" out="00:00:05.033">
+  <property name="length">152</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_078.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">102</property>
+  <property name="kdenlive:file_size">385226</property>
+  <property name="kdenlive:file_hash">dd69ff370dd803082057b012a2becd31</property>
+ </producer>
+ <producer id="producer97" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_079.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">103</property>
+  <property name="kdenlive:file_size">306419</property>
+  <property name="kdenlive:file_hash">a2fd77eac2eca809cd5f22e44be966dd</property>
+ </producer>
+ <producer id="producer98" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_080.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">104</property>
+  <property name="kdenlive:file_size">303631</property>
+  <property name="kdenlive:file_hash">f8f517cb7ce19a41f00580cf332274bf</property>
+ </producer>
+ <producer id="producer99" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_081.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">105</property>
+  <property name="kdenlive:file_size">310063</property>
+  <property name="kdenlive:file_hash">ac84817874c81585aadac36c9c4d8c11</property>
+ </producer>
+ <producer id="producer100" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_082.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">106</property>
+  <property name="kdenlive:file_size">305245</property>
+  <property name="kdenlive:file_hash">a4d72ce3bd83b92c642c8dadc8744eca</property>
+ </producer>
+ <producer id="producer101" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_083.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">107</property>
+  <property name="kdenlive:file_size">300295</property>
+  <property name="kdenlive:file_hash">fb472cc797bcd9a98120012b3136a53a</property>
+ </producer>
+ <producer id="producer102" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_084.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">108</property>
+  <property name="kdenlive:file_size">288070</property>
+  <property name="kdenlive:file_hash">9620c6173cb43e6ad6438294826ae32a</property>
+ </producer>
+ <producer id="producer103" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_085.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">109</property>
+  <property name="kdenlive:file_size">317467</property>
+  <property name="kdenlive:file_hash">08b58f77e45bb04c718a4be9cb7d29b7</property>
+ </producer>
+ <producer id="producer104" in="00:00:00.000" out="00:00:04.967">
+  <property name="length">00:00:05.000</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/LVS/lvs_086.png</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">1024</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:duration">00:00:05.000</property>
+  <property name="kdenlive:folderid">24</property>
+  <property name="kdenlive:id">110</property>
+  <property name="kdenlive:file_size">320964</property>
+  <property name="kdenlive:file_hash">da03a6cbae5747dba392a5ef9a648e61</property>
  </producer>
  <playlist id="main_bin">
-  <property name="kdenlive:docproperties.activeTrack">3</property>
+  <property name="kdenlive:docproperties.activeTrack">8</property>
   <property name="kdenlive:docproperties.audioChannels">2</property>
   <property name="kdenlive:docproperties.audioTarget">-1</property>
   <property name="kdenlive:docproperties.disablepreview">0</property>
@@ -1416,22 +2991,67 @@
     {
         "children": [
             {
-                "data": "0:0",
+                "data": "7:1",
                 "leaf": "clip",
                 "type": "Leaf"
             },
             {
-                "data": "7:0",
+                "data": "0:1",
                 "leaf": "clip",
                 "type": "Leaf"
             }
         ],
         "type": "AVSplit"
+    },
+    {
+        "children": [
+            {
+                "data": "4:7952",
+                "leaf": "clip",
+                "type": "Leaf"
+            },
+            {
+                "data": "4:8634",
+                "leaf": "clip",
+                "type": "Leaf"
+            },
+            {
+                "data": "4:9316",
+                "leaf": "clip",
+                "type": "Leaf"
+            },
+            {
+                "data": "4:9998",
+                "leaf": "clip",
+                "type": "Leaf"
+            },
+            {
+                "data": "4:10680",
+                "leaf": "clip",
+                "type": "Leaf"
+            },
+            {
+                "data": "4:11362",
+                "leaf": "clip",
+                "type": "Leaf"
+            },
+            {
+                "data": "4:12044",
+                "leaf": "clip",
+                "type": "Leaf"
+            },
+            {
+                "data": "4:12727",
+                "leaf": "clip",
+                "type": "Leaf"
+            }
+        ],
+        "type": "Normal"
     }
 ]
 </property>
   <property name="kdenlive:docproperties.kdenliveversion">21.04.3</property>
-  <property name="kdenlive:docproperties.position">195</property>
+  <property name="kdenlive:docproperties.position">8399</property>
   <property name="kdenlive:docproperties.previewextension"/>
   <property name="kdenlive:docproperties.previewparameters"/>
   <property name="kdenlive:docproperties.profile">atsc_1080p_30</property>
@@ -1461,16 +3081,17 @@
   <property name="kdenlive:docproperties.rendertwopass">0</property>
   <property name="kdenlive:docproperties.renderurl">m20_recon_mix.mp4</property>
   <property name="kdenlive:docproperties.renderzone">0</property>
-  <property name="kdenlive:docproperties.scrollPos">0</property>
+  <property name="kdenlive:docproperties.scrollPos">2069</property>
   <property name="kdenlive:docproperties.seekOffset">30000</property>
   <property name="kdenlive:docproperties.version">1</property>
   <property name="kdenlive:docproperties.verticalzoom">1</property>
   <property name="kdenlive:docproperties.videoTarget">3</property>
   <property name="kdenlive:docproperties.zonein">0</property>
   <property name="kdenlive:docproperties.zoneout">1</property>
-  <property name="kdenlive:docproperties.zoom">6</property>
-  <property name="kdenlive:expandedFolders"/>
+  <property name="kdenlive:docproperties.zoom">10</property>
+  <property name="kdenlive:expandedFolders">24</property>
   <property name="kdenlive:documentnotes"/>
+  <property name="kdenlive:folder.-1.24">LVS</property>
   <property name="xml_retain">1</property>
   <entry producer="producer14" in="00:00:00.000" out="02:18:35.033"/>
   <entry producer="producer13" in="00:00:00.000" out="00:15:00.733"/>
@@ -1489,7 +3110,94 @@
   <entry producer="producer11" in="00:00:00.000" out="00:00:09.933"/>
   <entry producer="producer12" in="00:00:00.000" out="00:00:27.933"/>
   <entry producer="producer15" in="00:00:00.000" out="00:00:12.500"/>
-  <entry producer="producer17" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer17" in="00:00:00.000" out="00:01:12.033"/>
+  <entry producer="producer18" in="00:00:00.000" out="00:00:05.233"/>
+  <entry producer="producer19" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer20" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer21" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer22" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer23" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer24" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer25" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer26" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer27" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer28" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer29" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer30" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer31" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer32" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer33" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer34" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer35" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer36" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer37" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer38" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer39" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer40" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer41" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer42" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer43" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer44" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer45" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer46" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer47" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer48" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer49" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer50" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer51" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer52" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer53" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer54" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer55" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer56" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer57" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer58" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer59" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer60" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer61" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer62" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer63" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer64" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer65" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer66" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer67" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer68" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer69" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer70" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer71" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer72" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer73" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer74" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer75" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer76" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer77" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer78" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer79" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer80" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer81" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer82" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer83" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer84" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer85" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer86" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer87" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer88" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer89" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer90" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer91" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer92" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer93" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer94" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer95" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer96" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer97" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer98" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer99" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer100" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer101" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer102" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer103" in="00:00:00.000" out="00:00:04.967"/>
+  <entry producer="producer104" in="00:00:00.000" out="00:00:04.967"/>
  </playlist>
  <producer id="black_track" in="00:00:00.000" out="00:24:28.800">
   <property name="length">2147483647</property>
@@ -1500,7 +3208,7 @@
   <property name="mlt_image_format">rgb24a</property>
   <property name="set.test_audio">0</property>
  </producer>
- <producer id="producer18" in="00:00:00.000" out="00:15:00.733">
+ <producer id="producer105" in="00:00:00.000" out="00:15:00.733">
   <property name="length">27023</property>
   <property name="eof">pause</property>
   <property name="resource">FromYouTube/JPLStream.mp4</property>
@@ -1568,7 +3276,8 @@
  </producer>
  <playlist id="playlist0">
   <property name="kdenlive:audio_track">1</property>
-  <entry producer="producer18" in="00:03:15.767" out="00:11:04.533">
+  <blank length="00:00:00.033"/>
+  <entry producer="producer105" in="00:03:15.800" out="00:11:04.533">
    <property name="kdenlive:id">3</property>
   </entry>
  </playlist>
@@ -1635,7 +3344,7 @@
    <property name="disable">1</property>
   </filter>
  </tractor>
- <producer id="producer19" in="00:00:00.000" out="00:03:54.900">
+ <producer id="producer106" in="00:00:00.000" out="00:03:54.900">
   <property name="length">7048</property>
   <property name="eof">pause</property>
   <property name="resource">/mnt/big/home/chrisj/Music/Game Soundtracks/Final Fantasy XIII/Final Fantasy XIII-2 Original Soundtrack/CD1/11 - Shissou.mp3</property>
@@ -1672,7 +3381,7 @@
  <playlist id="playlist4">
   <property name="kdenlive:audio_track">1</property>
   <blank length="00:00:04.333"/>
-  <entry producer="producer19" in="00:00:00.000" out="00:03:54.900">
+  <entry producer="producer106" in="00:00:00.000" out="00:03:54.900">
    <property name="kdenlive:id">5</property>
    <filter id="filter6">
     <property name="window">75</property>
@@ -1714,7 +3423,7 @@
    <property name="disable">1</property>
   </filter>
  </tractor>
- <producer id="producer20" in="00:00:00.000" out="00:07:04.533">
+ <producer id="producer107" in="00:00:00.000" out="00:07:04.533">
   <property name="length">00:07:04.567</property>
   <property name="eof">pause</property>
   <property name="resource">Frames_recon/m20_recon_%05d.png</property>
@@ -1876,7 +3585,8 @@
   <property name="set.test_image">0</property>
  </producer>
  <playlist id="playlist6">
-  <entry producer="producer20" in="00:00:00.000" out="00:07:04.533">
+  <blank length="00:00:00.033"/>
+  <entry producer="producer107" in="00:00:00.033" out="00:07:04.533">
    <property name="kdenlive:id">4</property>
   </entry>
  </playlist>
@@ -1890,7 +3600,32 @@
   <track hide="audio" producer="playlist6"/>
   <track producer="playlist7"/>
  </tractor>
- <producer id="producer21" in="00:00:00.000" out="00:00:22.700">
+ <producer id="producer108" in="00:00:00.000" out="00:01:12.033">
+  <property name="length">00:01:12.067</property>
+  <property name="eof">pause</property>
+  <property name="resource">Frames_recon_hud/hud_%05d.png</property>
+  <property name="ttl">1</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="meta.media.width">1920</property>
+  <property name="meta.media.height">1080</property>
+  <property name="mlt_service">qimage</property>
+  <property name="kdenlive:clipname">hud_</property>
+  <property name="luma_duration">30</property>
+  <property name="fade">0</property>
+  <property name="crop">0</property>
+  <property name="loop">0</property>
+  <property name="kdenlive:duration">00:01:12.067</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">20</property>
+  <property name="kdenlive:file_hash">f053d0e4cd468a13dec41574a8884327</property>
+  <property name="global_feed">1</property>
+  <property name="xml">was here</property>
+  <property name="set.test_audio">1</property>
+  <property name="set.test_image">0</property>
+ </producer>
+ <producer id="producer109" in="00:00:00.000" out="00:00:22.700">
   <property name="length">682</property>
   <property name="eof">pause</property>
   <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/mp4/rdc_00000005_023_000789.mp4</property>
@@ -1950,7 +3685,7 @@
   <property name="set.test_audio">1</property>
   <property name="set.test_image">0</property>
  </producer>
- <producer id="producer22" in="00:00:00.000" out="00:00:22.700">
+ <producer id="producer110" in="00:00:00.000" out="00:00:22.700">
   <property name="length">682</property>
   <property name="eof">pause</property>
   <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/mp4/rdc_00000005_023_001472.mp4</property>
@@ -2002,7 +3737,7 @@
   <property name="set.test_audio">1</property>
   <property name="set.test_image">0</property>
  </producer>
- <producer id="producer23" in="00:00:00.000" out="00:00:22.700">
+ <producer id="producer111" in="00:00:00.000" out="00:00:22.700">
   <property name="length">682</property>
   <property name="eof">pause</property>
   <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/mp4/rdc_00000005_023_002155.mp4</property>
@@ -2054,7 +3789,7 @@
   <property name="set.test_audio">1</property>
   <property name="set.test_image">0</property>
  </producer>
- <producer id="producer24" in="00:00:00.000" out="00:00:22.700">
+ <producer id="producer112" in="00:00:00.000" out="00:00:22.700">
   <property name="length">682</property>
   <property name="eof">pause</property>
   <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/mp4/rdc_00000005_023_002838.mp4</property>
@@ -2106,7 +3841,7 @@
   <property name="set.test_audio">1</property>
   <property name="set.test_image">0</property>
  </producer>
- <producer id="producer25" in="00:00:00.000" out="00:00:22.700">
+ <producer id="producer113" in="00:00:00.000" out="00:00:22.700">
   <property name="length">682</property>
   <property name="eof">pause</property>
   <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/mp4/rdc_00000005_023_003521.mp4</property>
@@ -2158,7 +3893,7 @@
   <property name="set.test_audio">1</property>
   <property name="set.test_image">0</property>
  </producer>
- <producer id="producer26" in="00:00:00.000" out="00:00:22.700">
+ <producer id="producer114" in="00:00:00.000" out="00:00:22.700">
   <property name="length">682</property>
   <property name="eof">pause</property>
   <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/mp4/rdc_00000005_023_004204.mp4</property>
@@ -2210,7 +3945,7 @@
   <property name="set.test_audio">1</property>
   <property name="set.test_image">0</property>
  </producer>
- <producer id="producer27" in="00:00:00.000" out="00:00:22.733">
+ <producer id="producer115" in="00:00:00.000" out="00:00:22.733">
   <property name="length">683</property>
   <property name="eof">pause</property>
   <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/mp4/rdc_00000005_023_004887.mp4</property>
@@ -2262,7 +3997,7 @@
   <property name="set.test_audio">1</property>
   <property name="set.test_image">0</property>
  </producer>
- <producer id="producer28" in="00:00:00.000" out="00:00:09.933">
+ <producer id="producer116" in="00:00:00.000" out="00:00:09.933">
   <property name="length">299</property>
   <property name="eof">pause</property>
   <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/mp4/rdc_00000005_023_005571.mp4</property>
@@ -2315,34 +4050,38 @@
   <property name="set.test_image">0</property>
  </producer>
  <playlist id="playlist8">
-  <blank length="00:04:24.633"/>
-  <entry producer="producer21" in="00:00:00.000" out="00:00:22.700">
+  <blank length="00:00:00.033"/>
+  <entry producer="producer108" in="00:00:00.033" out="00:01:12.033">
+   <property name="kdenlive:id">20</property>
+  </entry>
+  <blank length="00:03:13.000"/>
+  <entry producer="producer109" in="00:00:00.000" out="00:00:22.700">
    <property name="kdenlive:id">9</property>
   </entry>
-  <entry producer="producer22" in="00:00:00.000" out="00:00:22.700">
+  <entry producer="producer110" in="00:00:00.000" out="00:00:22.700">
    <property name="kdenlive:id">10</property>
   </entry>
-  <entry producer="producer23" in="00:00:00.000" out="00:00:22.700">
+  <entry producer="producer111" in="00:00:00.000" out="00:00:22.700">
    <property name="kdenlive:id">11</property>
   </entry>
-  <entry producer="producer24" in="00:00:00.000" out="00:00:22.700">
+  <entry producer="producer112" in="00:00:00.000" out="00:00:22.700">
    <property name="kdenlive:id">12</property>
   </entry>
-  <entry producer="producer25" in="00:00:00.000" out="00:00:22.700">
+  <entry producer="producer113" in="00:00:00.000" out="00:00:22.700">
    <property name="kdenlive:id">13</property>
   </entry>
-  <entry producer="producer26" in="00:00:00.000" out="00:00:22.700">
+  <entry producer="producer114" in="00:00:00.000" out="00:00:22.700">
    <property name="kdenlive:id">14</property>
   </entry>
-  <entry producer="producer27" in="00:00:00.000" out="00:00:22.733">
+  <entry producer="producer115" in="00:00:00.000" out="00:00:22.733">
    <property name="kdenlive:id">15</property>
   </entry>
-  <entry producer="producer28" in="00:00:00.000" out="00:00:09.933">
+  <entry producer="producer116" in="00:00:00.000" out="00:00:09.933">
    <property name="kdenlive:id">16</property>
   </entry>
  </playlist>
  <playlist id="playlist9"/>
- <tractor id="tractor4" in="00:00:00.000" out="00:07:13.733">
+ <tractor id="tractor4" in="00:00:00.000" out="00:07:14.167">
   <property name="kdenlive:trackheight">58</property>
   <property name="kdenlive:timeline_active">1</property>
   <property name="kdenlive:collapsed">0</property>
@@ -2351,7 +4090,7 @@
   <track hide="audio" producer="playlist8"/>
   <track producer="playlist9"/>
  </tractor>
- <producer id="producer29" in="00:00:00.000" out="00:00:12.500">
+ <producer id="producer117" in="00:00:00.000" out="00:00:12.500">
   <property name="length">376</property>
   <property name="eof">pause</property>
   <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/png/PUC2/puc2.mp4</property>
@@ -2401,7 +4140,7 @@
   <property name="set.test_audio">1</property>
   <property name="set.test_image">0</property>
  </producer>
- <producer id="producer30" in="00:00:00.000" out="00:00:27.933">
+ <producer id="producer118" in="00:00:00.000" out="00:00:27.933">
   <property name="length">839</property>
   <property name="eof">pause</property>
   <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/mp4/ruc_00000005_020_001471.mp4</property>
@@ -2455,11 +4194,11 @@
  </producer>
  <playlist id="playlist10">
   <blank length="00:04:05.633"/>
-  <entry producer="producer29" in="00:00:00.000" out="00:00:12.500">
+  <entry producer="producer117" in="00:00:00.000" out="00:00:12.500">
    <property name="kdenlive:id">18</property>
   </entry>
   <blank length="00:02:24.567"/>
-  <entry producer="producer30" in="00:00:00.000" out="00:00:27.933">
+  <entry producer="producer118" in="00:00:00.000" out="00:00:27.933">
    <property name="kdenlive:id">17</property>
   </entry>
  </playlist>
@@ -2473,7 +4212,7 @@
   <track hide="audio" producer="playlist10"/>
   <track producer="playlist11"/>
  </tractor>
- <producer id="producer31" in="00:00:00.000" out="00:00:18.067">
+ <producer id="producer119" in="00:00:00.000" out="00:00:18.067">
   <property name="length">543</property>
   <property name="eof">pause</property>
   <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/mp4/puc1_00000005_023_000954.mp4</property>
@@ -2533,7 +4272,7 @@
   <property name="set.test_audio">1</property>
   <property name="set.test_image">0</property>
  </producer>
- <producer id="producer32" in="00:00:00.000" out="00:00:18.067">
+ <producer id="producer120" in="00:00:00.000" out="00:00:18.067">
   <property name="length">543</property>
   <property name="eof">pause</property>
   <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/mp4/puc1_00000005_023_002312.mp4</property>
@@ -2585,7 +4324,7 @@
   <property name="set.test_audio">1</property>
   <property name="set.test_image">0</property>
  </producer>
- <producer id="producer33" in="00:00:00.000" out="00:00:22.300">
+ <producer id="producer121" in="00:00:00.000" out="00:00:22.300">
   <property name="length">670</property>
   <property name="eof">pause</property>
   <property name="resource">/home/jeppesen/workspace/Data/M2020EDL/mp4/ddc_00000005_018_000588.mp4</property>
@@ -2647,14 +4386,14 @@
  </producer>
  <playlist id="playlist12">
   <blank length="00:04:04.733"/>
-  <entry producer="producer31" in="00:00:02.367" out="00:00:18.067">
+  <entry producer="producer119" in="00:00:02.367" out="00:00:18.067">
    <property name="kdenlive:id">7</property>
   </entry>
-  <entry producer="producer32" in="00:00:00.000" out="00:00:18.067">
+  <entry producer="producer120" in="00:00:00.000" out="00:00:18.067">
    <property name="kdenlive:id">8</property>
   </entry>
   <blank length="00:02:03.733"/>
-  <entry producer="producer33" in="00:00:00.000" out="00:00:22.300">
+  <entry producer="producer121" in="00:00:00.000" out="00:00:22.300">
    <property name="kdenlive:id">6</property>
   </entry>
  </playlist>
@@ -2668,7 +4407,7 @@
   <track hide="audio" producer="playlist12"/>
   <track producer="playlist13"/>
  </tractor>
- <producer id="producer34" in="00:00:00.000" out="00:15:00.733">
+ <producer id="producer122" in="00:00:00.000" out="00:15:00.733">
   <property name="length">27023</property>
   <property name="eof">pause</property>
   <property name="resource">FromYouTube/JPLStream.mp4</property>
@@ -2737,14 +4476,15 @@
   <property name="meta.media.progressive">1</property>
  </producer>
  <playlist id="playlist14">
-  <entry producer="producer34" in="00:03:15.767" out="00:11:04.533">
+  <blank length="00:00:00.033"/>
+  <entry producer="producer122" in="00:03:15.800" out="00:11:04.533">
    <property name="kdenlive:id">3</property>
    <filter id="filter10">
     <property name="rotate_center">1</property>
     <property name="mlt_service">qtblend</property>
     <property name="kdenlive_id">qtblend</property>
-    <property name="rect">00:03:15.767=362 -28 495 347 1.000000</property>
-    <property name="rotation">00:03:15.767=0</property>
+    <property name="rect">00:03:15.800=362 -28 495 347 1.000000</property>
+    <property name="rotation">00:03:15.800=0</property>
     <property name="compositing">0</property>
     <property name="distort">0</property>
     <property name="kdenlive:collapsed">0</property>
@@ -2773,7 +4513,258 @@
   <track hide="audio" producer="playlist14"/>
   <track producer="playlist15"/>
  </tractor>
- <tractor id="tractor8" global_feed="1" in="00:00:00.000" out="00:24:28.800">
+ <playlist id="playlist16">
+  <blank length="00:04:19.367"/>
+  <entry producer="producer18" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">23</property>
+  </entry>
+  <entry producer="producer19" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">25</property>
+  </entry>
+  <entry producer="producer20" in="00:00:00.000" out="00:00:03.267">
+   <property name="kdenlive:id">26</property>
+  </entry>
+  <entry producer="producer21" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">27</property>
+  </entry>
+  <entry producer="producer22" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">28</property>
+  </entry>
+  <entry producer="producer23" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">29</property>
+  </entry>
+  <entry producer="producer24" in="00:00:00.000" out="00:00:03.267">
+   <property name="kdenlive:id">30</property>
+  </entry>
+  <entry producer="producer25" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">31</property>
+  </entry>
+  <entry producer="producer26" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">32</property>
+  </entry>
+  <entry producer="producer27" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">33</property>
+  </entry>
+  <entry producer="producer28" in="00:00:00.000" out="00:00:03.267">
+   <property name="kdenlive:id">34</property>
+  </entry>
+  <entry producer="producer29" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">35</property>
+  </entry>
+  <entry producer="producer30" in="00:00:00.000" out="00:00:02.867">
+   <property name="kdenlive:id">36</property>
+  </entry>
+  <entry producer="producer31" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">37</property>
+  </entry>
+  <entry producer="producer32" in="00:00:00.000" out="00:00:03.267">
+   <property name="kdenlive:id">38</property>
+  </entry>
+  <entry producer="producer33" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">39</property>
+  </entry>
+  <entry producer="producer34" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">40</property>
+  </entry>
+  <entry producer="producer35" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">41</property>
+  </entry>
+  <entry producer="producer36" in="00:00:00.000" out="00:00:03.267">
+   <property name="kdenlive:id">42</property>
+  </entry>
+  <entry producer="producer37" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">43</property>
+  </entry>
+  <entry producer="producer38" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">44</property>
+  </entry>
+  <entry producer="producer39" in="00:00:00.000" out="00:00:03.467">
+   <property name="kdenlive:id">45</property>
+  </entry>
+  <entry producer="producer40" in="00:00:00.000" out="00:00:03.167">
+   <property name="kdenlive:id">46</property>
+  </entry>
+  <entry producer="producer41" in="00:00:00.000" out="00:00:01.767">
+   <property name="kdenlive:id">47</property>
+  </entry>
+  <entry producer="producer42" in="00:00:00.000" out="00:00:01.467">
+   <property name="kdenlive:id">48</property>
+  </entry>
+  <entry producer="producer43" in="00:00:00.000" out="00:00:01.367">
+   <property name="kdenlive:id">49</property>
+  </entry>
+  <entry producer="producer44" in="00:00:00.000" out="00:00:01.567">
+   <property name="kdenlive:id">50</property>
+  </entry>
+  <entry producer="producer45" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">51</property>
+  </entry>
+  <entry producer="producer46" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">52</property>
+  </entry>
+  <entry producer="producer47" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">53</property>
+  </entry>
+  <entry producer="producer48" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">54</property>
+  </entry>
+  <entry producer="producer49" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">55</property>
+  </entry>
+  <entry producer="producer50" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">56</property>
+  </entry>
+  <entry producer="producer51" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">57</property>
+  </entry>
+  <entry producer="producer52" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">58</property>
+  </entry>
+  <entry producer="producer53" in="00:00:00.000" out="00:00:00.967">
+   <property name="kdenlive:id">59</property>
+  </entry>
+  <entry producer="producer54" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">60</property>
+  </entry>
+  <entry producer="producer55" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">61</property>
+  </entry>
+  <entry producer="producer56" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">62</property>
+  </entry>
+  <entry producer="producer57" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">63</property>
+  </entry>
+  <entry producer="producer58" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">64</property>
+  </entry>
+  <entry producer="producer59" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">65</property>
+  </entry>
+  <entry producer="producer60" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">66</property>
+  </entry>
+  <entry producer="producer61" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">67</property>
+  </entry>
+  <entry producer="producer62" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">68</property>
+  </entry>
+  <entry producer="producer63" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">69</property>
+  </entry>
+  <entry producer="producer64" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">70</property>
+  </entry>
+  <entry producer="producer65" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">71</property>
+  </entry>
+  <entry producer="producer66" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">72</property>
+  </entry>
+  <entry producer="producer67" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">73</property>
+  </entry>
+  <entry producer="producer68" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">74</property>
+  </entry>
+  <entry producer="producer69" in="00:00:00.000" out="00:00:00.967">
+   <property name="kdenlive:id">75</property>
+  </entry>
+  <entry producer="producer70" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">76</property>
+  </entry>
+  <entry producer="producer71" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">77</property>
+  </entry>
+  <entry producer="producer72" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">78</property>
+  </entry>
+  <entry producer="producer73" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">79</property>
+  </entry>
+  <entry producer="producer74" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">80</property>
+  </entry>
+  <entry producer="producer75" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">81</property>
+  </entry>
+  <entry producer="producer76" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">82</property>
+  </entry>
+  <entry producer="producer77" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">83</property>
+  </entry>
+  <entry producer="producer78" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">84</property>
+  </entry>
+  <entry producer="producer79" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">85</property>
+  </entry>
+  <entry producer="producer80" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">86</property>
+  </entry>
+  <entry producer="producer81" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">87</property>
+  </entry>
+  <entry producer="producer82" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">88</property>
+  </entry>
+  <entry producer="producer83" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">89</property>
+  </entry>
+  <entry producer="producer84" in="00:00:00.000" out="00:00:01.067">
+   <property name="kdenlive:id">90</property>
+  </entry>
+  <entry producer="producer85" in="00:00:00.000" out="00:00:00.967">
+   <property name="kdenlive:id">91</property>
+  </entry>
+  <entry producer="producer86" in="00:00:00.000" out="00:00:01.167">
+   <property name="kdenlive:id">92</property>
+  </entry>
+  <entry producer="producer87" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">93</property>
+  </entry>
+  <entry producer="producer88" in="00:00:00.000" out="00:00:03.267">
+   <property name="kdenlive:id">94</property>
+  </entry>
+  <entry producer="producer89" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">95</property>
+  </entry>
+  <entry producer="producer90" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">96</property>
+  </entry>
+  <entry producer="producer91" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">97</property>
+  </entry>
+  <entry producer="producer92" in="00:00:00.000" out="00:00:03.267">
+   <property name="kdenlive:id">98</property>
+  </entry>
+  <entry producer="producer93" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">99</property>
+  </entry>
+  <entry producer="producer94" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">100</property>
+  </entry>
+  <entry producer="producer95" in="00:00:00.000" out="00:00:03.367">
+   <property name="kdenlive:id">101</property>
+  </entry>
+  <entry producer="producer96" in="00:00:00.000" out="00:00:03.267">
+   <property name="kdenlive:id">102</property>
+  </entry>
+  <entry producer="producer97" in="00:00:00.000" out="00:00:02.133">
+   <property name="kdenlive:id">103</property>
+  </entry>
+ </playlist>
+ <playlist id="playlist17"/>
+ <tractor id="tractor8" in="00:00:00.000" out="00:07:04.600">
+  <property name="kdenlive:track_name">LVS</property>
+  <property name="kdenlive:trackheight">58</property>
+  <property name="kdenlive:timeline_active">1</property>
+  <track producer="playlist16"/>
+  <track producer="playlist17"/>
+ </tractor>
+ <tractor id="tractor9" global_feed="1" in="00:00:00.000" out="00:24:28.800">
   <track producer="black_track"/>
   <track producer="tractor0"/>
   <track producer="tractor1"/>
@@ -2783,7 +4774,38 @@
   <track producer="tractor5"/>
   <track producer="tractor6"/>
   <track producer="tractor7"/>
-  <transition id="transition0" in="00:04:24.633" out="00:07:13.733">
+  <track producer="tractor8"/>
+  <transition id="transition0">
+   <property name="a_track">0</property>
+   <property name="b_track">1</property>
+   <property name="mlt_service">mix</property>
+   <property name="kdenlive_id">mix</property>
+   <property name="internal_added">237</property>
+   <property name="always_active">1</property>
+   <property name="accepts_blanks">1</property>
+   <property name="sum">1</property>
+  </transition>
+  <transition id="transition1">
+   <property name="a_track">0</property>
+   <property name="b_track">2</property>
+   <property name="mlt_service">mix</property>
+   <property name="kdenlive_id">mix</property>
+   <property name="internal_added">237</property>
+   <property name="always_active">1</property>
+   <property name="accepts_blanks">1</property>
+   <property name="sum">1</property>
+  </transition>
+  <transition id="transition2">
+   <property name="a_track">0</property>
+   <property name="b_track">3</property>
+   <property name="mlt_service">mix</property>
+   <property name="kdenlive_id">mix</property>
+   <property name="internal_added">237</property>
+   <property name="always_active">1</property>
+   <property name="accepts_blanks">1</property>
+   <property name="sum">1</property>
+  </transition>
+  <transition id="transition3" in="00:04:25.067" out="00:07:14.167">
    <property name="a_track">4</property>
    <property name="b_track">5</property>
    <property name="rect">00:00:00.000=1450 675 495 347 1.000000</property>
@@ -2795,7 +4817,7 @@
    <property name="force_track">1</property>
    <property name="rotation">00:00:00.000=0</property>
   </transition>
-  <transition id="transition1" in="00:04:05.633" out="00:04:18.133">
+  <transition id="transition4" in="00:04:05.633" out="00:04:18.133">
    <property name="a_track">4</property>
    <property name="b_track">6</property>
    <property name="rect">00:00:00.000=1450 320 495 347 1.000000</property>
@@ -2807,7 +4829,7 @@
    <property name="force_track">1</property>
    <property name="rotation">00:00:00.000=0</property>
   </transition>
-  <transition id="transition2" in="00:06:42.733" out="00:07:10.667">
+  <transition id="transition5" in="00:06:42.733" out="00:07:10.667">
    <property name="a_track">4</property>
    <property name="b_track">6</property>
    <property name="rect">00:00:00.000=1450 320 495 347 1.000000</property>
@@ -2819,7 +4841,7 @@
    <property name="force_track">1</property>
    <property name="rotation">00:00:00.000=0</property>
   </transition>
-  <transition id="transition3" in="00:06:42.300" out="00:07:04.600">
+  <transition id="transition6" in="00:06:42.300" out="00:07:04.600">
    <property name="a_track">4</property>
    <property name="b_track">7</property>
    <property name="rect">00:00:00.000=1450 0 495 347 1.000000</property>
@@ -2831,7 +4853,7 @@
    <property name="force_track">1</property>
    <property name="rotation">00:00:00.000=0</property>
   </transition>
-  <transition id="transition4" in="00:04:04.733" out="00:04:38.533">
+  <transition id="transition7" in="00:04:04.733" out="00:04:38.533">
    <property name="a_track">4</property>
    <property name="b_track">7</property>
    <property name="rect">00:00:00.000=1450 0 495 347 0.000000;00:00:00.867=1450 0 495 347 1.000000</property>
@@ -2843,37 +4865,19 @@
    <property name="force_track">1</property>
    <property name="rotation">00:00:00.000=0;00:00:00.867=0</property>
   </transition>
-  <transition id="transition5">
-   <property name="a_track">0</property>
-   <property name="b_track">1</property>
-   <property name="mlt_service">mix</property>
-   <property name="kdenlive_id">mix</property>
-   <property name="internal_added">237</property>
-   <property name="always_active">1</property>
-   <property name="accepts_blanks">1</property>
-   <property name="sum">1</property>
+  <transition id="transition8" in="00:04:19.367" out="00:07:04.600">
+   <property name="a_track">4</property>
+   <property name="b_track">9</property>
+   <property name="rect">00:00:00.000=1122 675 347 347 1.000000</property>
+   <property name="compositing">0</property>
+   <property name="distort">0</property>
+   <property name="rotate_center">1</property>
+   <property name="mlt_service">qtblend</property>
+   <property name="kdenlive_id">qtblend</property>
+   <property name="rotation">00:00:00.000=270</property>
+   <property name="force_track">1</property>
   </transition>
-  <transition id="transition6">
-   <property name="a_track">0</property>
-   <property name="b_track">2</property>
-   <property name="mlt_service">mix</property>
-   <property name="kdenlive_id">mix</property>
-   <property name="internal_added">237</property>
-   <property name="always_active">1</property>
-   <property name="accepts_blanks">1</property>
-   <property name="sum">1</property>
-  </transition>
-  <transition id="transition7">
-   <property name="a_track">0</property>
-   <property name="b_track">3</property>
-   <property name="mlt_service">mix</property>
-   <property name="kdenlive_id">mix</property>
-   <property name="internal_added">237</property>
-   <property name="always_active">1</property>
-   <property name="accepts_blanks">1</property>
-   <property name="sum">1</property>
-  </transition>
-  <transition id="transition8">
+  <transition id="transition9">
    <property name="a_track">0</property>
    <property name="b_track">4</property>
    <property name="compositing">0</property>
@@ -2884,7 +4888,7 @@
    <property name="internal_added">237</property>
    <property name="always_active">1</property>
   </transition>
-  <transition id="transition9">
+  <transition id="transition10">
    <property name="a_track">0</property>
    <property name="b_track">5</property>
    <property name="compositing">0</property>
@@ -2895,7 +4899,7 @@
    <property name="internal_added">237</property>
    <property name="always_active">1</property>
   </transition>
-  <transition id="transition10">
+  <transition id="transition11">
    <property name="a_track">0</property>
    <property name="b_track">6</property>
    <property name="compositing">0</property>
@@ -2906,7 +4910,7 @@
    <property name="internal_added">237</property>
    <property name="always_active">1</property>
   </transition>
-  <transition id="transition11">
+  <transition id="transition12">
    <property name="a_track">0</property>
    <property name="b_track">7</property>
    <property name="compositing">0</property>
@@ -2917,9 +4921,20 @@
    <property name="internal_added">237</property>
    <property name="always_active">1</property>
   </transition>
-  <transition id="transition12">
+  <transition id="transition13">
    <property name="a_track">0</property>
    <property name="b_track">8</property>
+   <property name="compositing">0</property>
+   <property name="distort">0</property>
+   <property name="rotate_center">0</property>
+   <property name="mlt_service">qtblend</property>
+   <property name="kdenlive_id">qtblend</property>
+   <property name="internal_added">237</property>
+   <property name="always_active">1</property>
+  </transition>
+  <transition id="transition14">
+   <property name="a_track">0</property>
+   <property name="b_track">9</property>
    <property name="compositing">0</property>
    <property name="distort">0</property>
    <property name="rotate_center">0</property>
