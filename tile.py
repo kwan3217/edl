@@ -1,6 +1,6 @@
 import numpy as np
 import re
-import vector
+import kwanmath.vector
 from collections import namedtuple
 
 path="/mnt/big/home/chrisj/workspace/Data/Planet/Mars/Jezero/Topography/"

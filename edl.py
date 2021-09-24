@@ -76,12 +76,12 @@ import datetime
 import pytz
 import spiceypy
 import numpy as np
+from kwanmath.geodesy import aTwoBody, aJ2, xyz2llr
 from kwanspice.daf import double_array_file
-from numpy.linalg import inv
 import matplotlib.pyplot as plt
-from scipy.interpolate import interp1d
-
-from vector import vlength, vcomp, vdecomp, vdot, vcross
+from kwanmath.vector import vlength, vcomp, vdecomp, vdot, vcross, vncross, vnormalize, rv, vv
+from kwanmath.matrix import point_toward, Mr, Mtrans
+from kwanmath.interp import tableterp, smooth
 from mars_atm import mars_atm
 import tile
 from which_kernel import ls_spice
@@ -89,57 +89,6 @@ import os.path
 
 import kwanspice
 
-def smooth(s,p0,p1):
-    """
-    Do a boxcar average on a 1D dataset
-    :param v:
-    :return:
-    """
-    result=s*0
-    count=0
-    for p in range(p0,p1):
-        result[-p0:-p1]+=s[-p0+p:len(s)-p1+p]
-        count+=1
-    result/=count
-    result[:-p0]=s[:-p0]
-    result[-p1:]=s[-p1:]
-    return result
-
-
-#Generic functions, usable in this or other projects. No access to global state
-def vnormalize(a):
-    """
-    Calculate the unit vector in a given direction
-    :param a: vector to get direction from
-    :return: unit vector in given direction
-    """
-    return a/vlength(a)
-
-def vncross(a, b):
-    """
-    Normalized cross product
-    :param a: First cross product factor
-    :param b: Second cross product factor
-    :return: Unit vector in same direction as vcross(a,b)
-    """
-    return vnormalize(vcross(a, b))
-
-def point_toward(*, p_b, p_r, t_b, t_r):
-    """
-    Calculate the point-towards transform
-    :param p_b: Body frame point vector
-    :param p_r: Reference frame point vector
-    :param t_b: Body frame toward vector
-    :param t_r: Reference toward vector
-    :return: Mb2r which makes p_r=Mb2r@p_b true, and simultaneously minimizes vangle(t_r,Mb2r@t_b)
-    """
-    s_r=vncross(p_r, t_r)
-    u_r=vncross(p_r, s_r)
-    R=np.stack((vnormalize(p_r).transpose(), s_r.transpose(), u_r.transpose()), axis=2)
-    s_b=vncross(p_b, t_b)
-    u_b=vncross(p_b, s_b)
-    B=np.stack((vnormalize(p_b).transpose(), s_b.transpose(), u_b.transpose()), axis=2)
-    return R @ inv(B)
 
 _LocLookReturn=namedtuple("LocLookReturn", "look_at location")
 def loc_look(*, location, look_at, sky=np.array([[0], [0], [1]]), direction_b=np.array([[0], [0], [1]]), sky_b=np.array([[0], [1], [0]])):
@@ -157,88 +106,6 @@ def loc_look(*, location, look_at, sky=np.array([[0], [0], [1]]), direction_b=np
     t_b=sky_b
     t_r=sky
     return _LocLookReturn(look_at=point_toward(p_b=p_b, p_r=p_r, t_b=t_b, t_r=t_r), location=location)
-
-def Mtrans(M,*vs):
-    """
-    Transform a matrix or stack of matrices against a vector or stack of vectors
-    :param M: Matrix [rows,columns] or stack of matrices [stack,rows,columns]
-    :param v: Column vector [rows,1] or stack of vectors [rows,stack]
-    :return: Transformed vector(s)
-    If M and v are both singles, return a single column vector
-    If M is single and v is stack, return a stack of vectors, each one transformed against the (one and only) matrix
-    If M is stack, v must be stack, return a stack of vectors, each one transformed against the corresponding matrix
-    """
-    if len(M.shape)>2:
-        result=tuple([ (M @ (v.transpose().reshape(v.shape[1], v.shape[0], 1)))[:, :, 0].transpose() for v in vs])
-    else:
-        result=tuple([M @ v for v in vs])
-    if len(vs)==1:
-        result=result[0]
-    return result
-
-def rv(sv):
-    """
-    Position part of state vector
-    :param sv: Stack of state vectors, can be one in stack IE column vector
-    :return: Position part, will be stack matching sv
-    """
-    return sv[:3,:]
-
-def vv(sv):
-    """
-    Velocity part of state vector
-    :param sv: Stack of state vectors, can be one in stack IE column vector
-    :return: Position part, will be stack matching sv
-    """
-    return sv[3:,:]
-
-def Mr(Ms):
-    """
-    Get position part of state transformation matrix
-    :param Ms: Stack of state transformation matrices
-    :return: Position part, IE upper 3x3 of each matrix
-    """
-    return Ms[...,:3,:3]
-
-def Mv(Ms):
-    """
-    Get position part of state transformation matrix
-    :param Ms: Stack of state transformation matrices
-    :return: Position part, IE upper 3x3 of each matrix
-    """
-    return Ms[...,3:,3:]
-
-def xyz2llr(sv):
-    """
-    Calculate spherical coordinates of state
-    :param sv: State vector, can be stack
-    :return: tuple of (lon,lat,r). Each will be an array iff sv is a stack
-    """
-    x,y,z=vdecomp(rv(sv))
-    r=vlength(rv(sv))
-    lat=np.arcsin(z/r)
-    lon=np.arctan2(y,x)
-    return(lon,lat,r)
-
-def llr2xyz(*,latd,lond,r):
-    x=r*np.cos(np.radians(latd))*np.cos(np.radians(lond))
-    y=r*np.cos(np.radians(latd))*np.sin(np.radians(lond))
-    z=r*np.sin(np.radians(latd))
-    return vcomp((x,y,z))
-
-def linterp(x0,y0,x1,y1,x):
-    """
-    Linear interpolation
-    :param x0: independent value of variable at one end
-    :param y0: dependent value corresponding to x0
-    :param x1: independent value at other end, doesn't need to be less than x0
-    :param y1: dependent corresponding to x1
-    :param x: independent variable, can be outside of range [x0,x1]
-    :return: dependent variable at this point
-    Note: All values can be arrays subject to Numpy broadcasting
-    """
-    t=(x-x0)/(x1-x0)
-    return (1-t)*y0+t*y1
 
 def ai(ets,svi):
     """
@@ -280,36 +147,6 @@ def body_rate(Mrb, dts):
     omegaz = (pz - mz) / 2
     omegarv=vcomp((omegax,omegay,omegaz))
     return omegarv
-
-def aJ2(svf,*,j2,gm,re):
-    """
-    J2 gravity acceleration
-    :param svf: State vector in an inertial equatorial frame (frozen frame is designed to meet this requirement)
-    :return: J2 acceleration in (distance units implied by rvf)/(time units implied by constants)s**2 in same frame as rvf
-
-    Constants MarsGM, MarsJ2, and MarsR must be pre-loaded and have distance units consistent
-    with rvf, and time units consistent with each other.
-
-    Only position part of state is used, but the velocity part *should* have time units consistent
-    with the constants. Time units follow those of the constants, completely ignoring those implied
-    by the velocity part
-    """
-    r=vlength(rv(svf))
-    coef=-3*j2*gm*re**2/(2*r**5)
-    x,y,z=vdecomp(rv(svf))
-    j2x=x*(1-5*z**2/r**2)
-    j2y=y*(1-5*z**2/r**2)
-    j2z=z*(3-5*z**2/r**2)
-    return (coef*vcomp((j2x,j2y,j2z)))
-
-def aTwoBody(svi,*,gm):
-    """
-    Two-body gravity acceleration
-    :param rv: Position vector in an inertial frame
-    :return: Two-body acceleration in (distance units implied by rv)/s**2
-    """
-    return -gm*rv(svi)/vlength(rv(svi))**3
-
 
 #Event frame numbers
 bodyTuple_fields=["pov_suffix","et0","a","m","cd","r0vb","v0vb"]
@@ -369,25 +206,6 @@ class UniformSPKLoader(SPKLoader):
             result[:,i],_ = spiceypy.spkezr(self.spice_sc, et, "J2000", "NONE", "499")
         return result
 
-class Tableterp:
-    def __init__(self,x,y):
-        self._x=x
-        self._y=y
-        if len(self._y.shape)==2:
-            self.axis = 1
-        else:
-            self.axis=0
-        self._yi=interp1d(self._x,self._y,axis=self.axis,assume_sorted=True,copy=False)
-    def __call__(self,x=None):
-        if x is None:
-            result=self._y.view()
-            result.flags.writeable=False
-            return result
-        if len(self._y.shape)==2:
-            return self._yi(x)[:,None]
-        else:
-            return self._yi(x)
-
 
 class Trajectory:
     # Fixed constants, not dependent on any Spice kernel
@@ -421,19 +239,18 @@ class Trajectory:
         self.DIMU_A_ofs=np.array([[-0.958],[0.641],[1.826]]) if DIMU_A_ofs is None else DIMU_A_ofs
         self.cache_fields=["ets","svr","angvf","sunr","earthr","earthlt","Msrf","Mpfb","csound","rho","P","T","scorch","omega","omegadot"]
     def _calc(self):
-        if not self._read_cache():
-            self._time()
-            self._spice()
-            self._atm()
-            self._vrel()
-            self._heat()
-            self._acc()
-            self._lvlh()
-            self._att()
-            self._body_rate()
-            self._rel()
-            self._drops()
-            self._write_cache()
+        self._time()
+        self._spice()
+        self._atm()
+        self._vrel()
+        self._heat()
+        self._acc()
+        self._lvlh()
+        self._att()
+        self._body_rate()
+        self._rel()
+        self._drops()
+    """
     def _read_cache(self):
         if not os.path.exists(self.cache_path+"/ets.npy"):
             return False
@@ -453,7 +270,7 @@ class Trajectory:
         for name, drop in self.droptraj.items():
             np.save(self.cache_path+"/droptraj_"+name+"_svr.npy",drop.svr)
             np.save(self.cache_path+"/droptraj_"+name+"_svf.npy",drop.svf)
-
+    """
     def _time(self):
         """
         Establish the time scales
@@ -491,6 +308,20 @@ class Trajectory:
         for kernel in extra_kernels:
             spiceypy.furnsh(kernel)
         ls_spice(verbose=True)
+
+    def _write_cache(self, fields, desc):
+        print("Writing "+desc+" cache...")
+        for name in fields:
+            np.save(self.cache_path + "/" + name + ".npy", self.__dict__[name])
+
+    def _read_cache(self, fields, desc):
+        if not os.path.exists(self.cache_path + "/" + fields[1] + ".npy"):
+            return False
+        print("Reading "+desc+" cache...")
+        for name in fields:
+            self.__dict__[name] = np.load(self.cache_path + "/" + name + ".npy")
+        return True
+
     def _spice(self):
         """
         Extract spacecraft state from Spice
@@ -564,45 +395,27 @@ class Trajectory:
         # Prove that the two matrices are transposes of each other
         # print(Msif-Msfi.transpose())
 
-        print("Extracting state vectors from Spice...")
-        Msri = np.zeros((len(self.ets), 6, 6)) #Stack of matrices converting to rotating from inertial
-        svi = np.zeros((6, len(self.ets))) #state vector in inertial frame
-        self.sunr = np.zeros((3, len(self.ets))) #sun position vectors in rotating frame
-        self.earthr = np.zeros((3, len(self.ets))) #sun position vectors in rotating frame
-        self.earthlt = np.zeros(len(self.ets)) #sun position vectors in rotating frame
-        svi=self.loader.spice()*self.km
-        for i, et in enumerate(self.ets):
-            Msri[i, :, :] = spiceypy.sxform("J2000", "IAU_MARS", et)
-            # Prove that Msri correctly transforms states (including velocity) from inertial to relative
-            # equal[i]=1 if np.allclose(svr[:,i],Msri[i,:,:]@svi[:,i]) else 0
-            # Since it does, we don't need these
-            # state,_=spiceypy.spkezr(self.spice_sc,et,"IAU_MARS","NONE","499")
-            # svr[:,i]=state*km
-            # Msir[i, :, :] = spiceypy.sxform("IAU_MARS", "J2000", et)
-            state, _ = spiceypy.spkezr("SUN", et, "IAU_MARS", "LT+S", "499")
-            self.sunr[:, i] = state[:3] * self.km
-            state, lt = spiceypy.spkezr("399", et, "IAU_MARS", "XCN+S", "499")
-            self.earthr[:, i] = state[:3] * self.km
-            self.earthlt[i]=lt
-            # Never use suni
-            # state,_=spiceypy.spkezr("SUN",et,"J2000","LT+S","499")
-            # suni[:,i]=state[:3]*km
-            # Prove that the upper left corner of Msr2i is equivalent to Mpr2i
-            # Mpir[i, :, :] = spiceypy.pxform("IAU_MARS", "J2000", et)
-            # Mpri[i, :, :] = spiceypy.pxform("J2000", "IAU_MARS", et)
-            # equal[i]=1 if np.allclose(Mpri[i,:,:],Msri[i,:3,:3]) else 0
-        print("Converting to frozen from inertial...")
-        self.svf = self.Msfi @ svi #state vector in frozen frame
-        print("Calculating to-rotating-from-frozen transformation")
-        self.Msrf = Msri @ self.Msfi.transpose() #Stack of matrices converting to rotating from frozen
-        #print("Converting to rotating from frozen...")
-        #self.svr=Mtrans(self.Msrf, self.svf)
-        # Prove that magnitudes of position and velocity are preserved
-        # diff_r=vlength(svf[:3,:])-vlength(svi[:3,:])
-        # diff_v=vlength(svf[3:,:])-vlength(svi[3:,:])
-        # plt.plot(diff_r)
-        # plt.plot(diff_v)
-        # plt.show()
+        cache_fields = ["sunr","earthr","earthlt","svf","Msrf"]
+        if not self._read_cache(cache_fields,"Spice"):
+            print("Extracting state vectors from Spice...")
+            Msri = np.zeros((len(self.ets), 6, 6)) #Stack of matrices converting to rotating from inertial
+            svi = np.zeros((6, len(self.ets))) #state vector in inertial frame
+            self.sunr = np.zeros((3, len(self.ets))) #sun position vectors in rotating frame
+            self.earthr = np.zeros((3, len(self.ets))) #sun position vectors in rotating frame
+            self.earthlt = np.zeros(len(self.ets)) #sun position vectors in rotating frame
+            svi=self.loader.spice()*self.km
+            for i, et in enumerate(self.ets):
+                Msri[i, :, :] = spiceypy.sxform("J2000", "IAU_MARS", et)
+                state, _ = spiceypy.spkezr("SUN", et, "IAU_MARS", "LT+S", "499")
+                self.sunr[:, i] = state[:3] * self.km
+                state, lt = spiceypy.spkezr("399", et, "IAU_MARS", "XCN+S", "499")
+                self.earthr[:, i] = state[:3] * self.km
+                self.earthlt[i]=lt
+            print("Converting to frozen from inertial...")
+            self.svf = self.Msfi @ svi #state vector in frozen frame
+            print("Calculating to-rotating-from-frozen transformation")
+            self.Msrf = Msri @ self.Msfi.transpose() #Stack of matrices converting to rotating from frozen
+            self._write_cache(cache_fields,"Spice")
     def _atm(self):
         """
         Calculate atmosphere properties
@@ -614,12 +427,15 @@ class Trajectory:
         :sets T: stack of free-air temperature in K at each step
         :sets csoound: stack of free-air speed of sound in m/s at each step
         """
-        print("Calculating atmosphere...")
-        atm_vals = mars_atm(vlength(rv(self.svf)))
-        self.rho=atm_vals.rho
-        self.P=atm_vals.P
-        self.T=atm_vals.T
-        self.csound=atm_vals.csound
+        cache_fields = ["rho","P","T","csound"]
+        if not self._read_cache(cache_fields,"atmosphere"):
+            print("Calculating atmosphere...")
+            atm_vals = mars_atm(vlength(rv(self.svf)))
+            self.rho=atm_vals.rho
+            self.P=atm_vals.P
+            self.T=atm_vals.T
+            self.csound=atm_vals.csound
+            self._write_cache(cache_fields,"atmosphere")
     def _wind(self,svf):
         """
         Calculate velocity vector of the rotating frame at this point in the frozen frame
@@ -811,22 +627,22 @@ class Trajectory:
         self.lhatr                                 =Mtrans(Mr(self.Msrf),self.lhatf)
         (self.lon, self.lat, self.r) = xyz2llr(rv(self.svr))
     def tabulate(self):
-        self.t_svr=Tableterp(self.ets,self.svr)
-        self.t_angvr=Tableterp(self.ets,Mtrans(Mr(self.Msrf),self.angvf))
-        self.t_sunr = Tableterp(self.ets, self.sunr)
-        self.t_earthr = Tableterp(self.ets, self.earthr)
-        self.t_earthlt = Tableterp(self.ets, self.earthlt)
-        self.t_Mprb=Tableterp(self.ets,Mr(self.Msrf) @ self.Mpfb)
-        self.t_csound=Tableterp(self.ets,self.csound)
-        self.t_rho=Tableterp(self.ets,self.rho)
-        self.t_P=Tableterp(self.ets,self.P)
-        self.t_T=Tableterp(self.ets,self.T)
-        self.t_scorch=Tableterp(self.ets,self.scorch)
-        self.t_omega=Tableterp(self.ets,self.omega)
-        self.t_omegadot=Tableterp(self.ets,smooth(self.omegadot,-50,50))
+        self.t_svr=tableterp(self.ets,self.svr)
+        self.t_angvr=tableterp(self.ets,Mtrans(Mr(self.Msrf),self.angvf),smooth0=-50,smooth1=50)
+        self.t_sunr = tableterp(self.ets, self.sunr)
+        self.t_earthr = tableterp(self.ets, self.earthr)
+        self.t_earthlt = tableterp(self.ets, self.earthlt)
+        self.t_Mprb=tableterp(self.ets,Mr(self.Msrf) @ self.Mpfb)
+        self.t_csound=tableterp(self.ets,self.csound)
+        self.t_rho=tableterp(self.ets,self.rho)
+        self.t_P=tableterp(self.ets,self.P)
+        self.t_T=tableterp(self.ets,self.T)
+        self.t_scorch=tableterp(self.ets,self.scorch)
+        self.t_omega=tableterp(self.ets,self.omega)
+        self.t_omegadot=tableterp(self.ets,self.omegadot,smooth0=-50,smooth1=50)
         self.t_droptraj={}
         for name, drop in self.droptraj.items():
-            self.t_droptraj[name]=(Tableterp(self.ets,drop.svr),drop.drop.pov_suffix)
+            self.t_droptraj[name]=(tableterp(self.ets,drop.svr),drop.drop.pov_suffix)
 
     @staticmethod
     def print_vector(name, *, v=None, formula=None, comment=None, file):
